@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059721229C2A3E00B54552 /* AppDelegate.swift */; };
-		EF059724229C2A3E00B54552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059723229C2A3E00B54552 /* ViewController.swift */; };
-		EF059727229C2A3E00B54552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF059725229C2A3E00B54552 /* Main.storyboard */; };
+		EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059723229C2A3E00B54552 /* AuthViewController.swift */; };
+		EF059727229C2A3E00B54552 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF059725229C2A3E00B54552 /* Auth.storyboard */; };
 		EF059729229C2A3F00B54552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF059728229C2A3F00B54552 /* Assets.xcassets */; };
 		EF05972C229C2A3F00B54552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */; };
+		EF059747229C455B00B54552 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059735229C455B00B54552 /* Montserrat-Regular.otf */; };
+		EF059748229C455B00B54552 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059736229C455B00B54552 /* Montserrat-SemiBold.otf */; };
+		EF05974A229C455B00B54552 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059738229C455B00B54552 /* Montserrat-Light.otf */; };
+		EF05974C229C455B00B54552 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF05973A229C455B00B54552 /* Montserrat-Black.otf */; };
+		EF059750229C455B00B54552 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF05973E229C455B00B54552 /* Montserrat-Bold.otf */; };
+		EF059752229C455B00B54552 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059740229C455B00B54552 /* Montserrat-ExtraBold.otf */; };
+		EF059754229C455B00B54552 /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059742229C455B00B54552 /* Montserrat-ExtraLight.otf */; };
+		EF059756229C455B00B54552 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059744229C455B00B54552 /* Montserrat-Thin.otf */; };
+		EF059757229C455B00B54552 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059745229C455B00B54552 /* Montserrat-Medium.otf */; };
+		EF05975E229D05D300B54552 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975D229D05D300B54552 /* AuthButton.swift */; };
+		EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975F229D1C5700B54552 /* SigninViewController.swift */; };
+		EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF059761229D69BE00B54552 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EF05971E229C2A3E00B54552 /* Bye Thing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bye Thing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF059721229C2A3E00B54552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF059723229C2A3E00B54552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF059726229C2A3E00B54552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF059723229C2A3E00B54552 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		EF059726229C2A3E00B54552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		EF059728229C2A3F00B54552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF05972B229C2A3F00B54552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF05972D229C2A3F00B54552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF059735229C455B00B54552 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		EF059736229C455B00B54552 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.otf"; path = "../../../../../Downloads/montserrat/Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		EF059738229C455B00B54552 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Light.otf"; sourceTree = "<group>"; };
+		EF05973A229C455B00B54552 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Black.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Black.otf"; sourceTree = "<group>"; };
+		EF05973E229C455B00B54552 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		EF059740229C455B00B54552 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.otf"; path = "../../../../../Downloads/montserrat/Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		EF059742229C455B00B54552 /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraLight.otf"; path = "../../../../../Downloads/montserrat/Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		EF059744229C455B00B54552 /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		EF059745229C455B00B54552 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		EF05975D229D05D300B54552 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		EF05975F229D1C5700B54552 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		EF059761229D69BE00B54552 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +78,58 @@
 		EF059720229C2A3E00B54552 /* Bye Thing */ = {
 			isa = PBXGroup;
 			children = (
+				EF05975A229D04C100B54552 /* Models */,
+				EF059759229D04BB00B54552 /* VIews */,
+				EF059758229D04B000B54552 /* Controllers */,
 				EF059721229C2A3E00B54552 /* AppDelegate.swift */,
-				EF059723229C2A3E00B54552 /* ViewController.swift */,
-				EF059725229C2A3E00B54552 /* Main.storyboard */,
+				EF059725229C2A3E00B54552 /* Auth.storyboard */,
 				EF059728229C2A3F00B54552 /* Assets.xcassets */,
 				EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
+				EF059761229D69BE00B54552 /* GoogleService-Info.plist */,
+				EF059733229C453500B54552 /* Fonts */,
 			);
 			path = "Bye Thing";
+			sourceTree = "<group>";
+		};
+		EF059733229C453500B54552 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EF05973A229C455B00B54552 /* Montserrat-Black.otf */,
+				EF05973E229C455B00B54552 /* Montserrat-Bold.otf */,
+				EF059740229C455B00B54552 /* Montserrat-ExtraBold.otf */,
+				EF059742229C455B00B54552 /* Montserrat-ExtraLight.otf */,
+				EF059738229C455B00B54552 /* Montserrat-Light.otf */,
+				EF059745229C455B00B54552 /* Montserrat-Medium.otf */,
+				EF059735229C455B00B54552 /* Montserrat-Regular.otf */,
+				EF059736229C455B00B54552 /* Montserrat-SemiBold.otf */,
+				EF059744229C455B00B54552 /* Montserrat-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EF059758229D04B000B54552 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF059723229C2A3E00B54552 /* AuthViewController.swift */,
+				EF05975F229D1C5700B54552 /* SigninViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF059759229D04BB00B54552 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				EF05975D229D05D300B54552 /* AuthButton.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		EF05975A229D04C100B54552 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +190,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */,
+				EF059752229C455B00B54552 /* Montserrat-ExtraBold.otf in Resources */,
 				EF05972C229C2A3F00B54552 /* LaunchScreen.storyboard in Resources */,
+				EF059756229C455B00B54552 /* Montserrat-Thin.otf in Resources */,
 				EF059729229C2A3F00B54552 /* Assets.xcassets in Resources */,
-				EF059727229C2A3E00B54552 /* Main.storyboard in Resources */,
+				EF059748229C455B00B54552 /* Montserrat-SemiBold.otf in Resources */,
+				EF059750229C455B00B54552 /* Montserrat-Bold.otf in Resources */,
+				EF05974C229C455B00B54552 /* Montserrat-Black.otf in Resources */,
+				EF059747229C455B00B54552 /* Montserrat-Regular.otf in Resources */,
+				EF059727229C2A3E00B54552 /* Auth.storyboard in Resources */,
+				EF059754229C455B00B54552 /* Montserrat-ExtraLight.otf in Resources */,
+				EF059757229C455B00B54552 /* Montserrat-Medium.otf in Resources */,
+				EF05974A229C455B00B54552 /* Montserrat-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF059724229C2A3E00B54552 /* ViewController.swift in Sources */,
+				EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */,
+				EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */,
+				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,12 +223,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF059725229C2A3E00B54552 /* Main.storyboard */ = {
+		EF059725229C2A3E00B54552 /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EF059726229C2A3E00B54552 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */ = {
