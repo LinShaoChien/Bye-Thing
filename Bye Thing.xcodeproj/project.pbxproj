@@ -24,6 +24,7 @@
 		EF05975E229D05D300B54552 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975D229D05D300B54552 /* AuthButton.swift */; };
 		EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975F229D1C5700B54552 /* SigninViewController.swift */; };
 		EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF059761229D69BE00B54552 /* GoogleService-Info.plist */; };
+		EF059765229D6CC600B54552 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059764229D6CC600B54552 /* AuthServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EF05975D229D05D300B54552 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		EF05975F229D1C5700B54552 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		EF059761229D69BE00B54552 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF059764229D6CC600B54552 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		EF059720229C2A3E00B54552 /* Bye Thing */ = {
 			isa = PBXGroup;
 			children = (
+				EF059763229D6C9600B54552 /* Services */,
 				EF05975A229D04C100B54552 /* Models */,
 				EF059759229D04BB00B54552 /* VIews */,
 				EF059758229D04B000B54552 /* Controllers */,
@@ -130,6 +133,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EF059763229D6C9600B54552 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF059764229D6CC600B54552 /* AuthServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF059765229D6CC600B54552 /* AuthServices.swift in Sources */,
 				EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */,
 				EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */,
 				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
