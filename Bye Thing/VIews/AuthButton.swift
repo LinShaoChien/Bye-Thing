@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class AuthButton: UIButton {
 
     override func awakeFromNib() {

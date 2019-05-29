@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,18 +25,20 @@ class AuthViewController: UIViewController {
         setupTapGestureRecognizer()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
     }
 
     @IBAction func signUpPressed(_ sender: Any) {
-        // Sign up
+        createUser()
     }
     
     @IBAction func signinPressed(_ sender: Any) {
         self.performSegue(withIdentifier: Segue.signin, sender: nil)
     }
     
-    @IBAction func signinWithGmailPressed(_ sender: Any) {
-        // Sign in with gmail
+    @IBAction func signinWithGooglePressed(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func signinWithFacebookPressed(_ sender: Any) {
@@ -50,6 +54,59 @@ class AuthViewController: UIViewController {
         view.endEditing(true)
     }
     
+    private func createUser() {
+        guard let email = emailTextField.text, emailTextField.text != "" else {
+            let alert = UIAlertController(title: "Email must not be empty.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            emailTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard let password = passwordTextField.text, passwordTextField.text != "" else {
+            let alert = UIAlertController(title: "Password must not be empty.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            passwordTextField.becomeFirstResponder()
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard error == nil else {
+                
+                switch (error! as NSError).code {
+                case AuthErrorCode.invalidEmail.rawValue:
+                    let alert = UIAlertController(title: "Invalid Email", message: "Email address is malformed", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                case AuthErrorCode.emailAlreadyInUse.rawValue:
+                    let alert = UIAlertController(title: "Email Already In Use", message: "Please sign in or select another email", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                case AuthErrorCode.weakPassword.rawValue:
+                    if let message = (error! as NSError).userInfo["NSLocalizedDescription"] {
+                        let alert = UIAlertController(title: "Weak Password", message: "\(message)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                case AuthErrorCode.operationNotAllowed.rawValue:
+                    let alert = UIAlertController(title: "Email Not Allowed", message: "This email is not allowed", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                default:
+                    return
+                }
+                return
+            }
+            print("CREATE USER!")
+        }
+    }
+    
+    
+    
 }
 
 extension AuthViewController: UITextFieldDelegate {
@@ -60,9 +117,10 @@ extension AuthViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             textField.resignFirstResponder()
-            // Signup
+            createUser()
         }
         return true
     }
     
 }
+
