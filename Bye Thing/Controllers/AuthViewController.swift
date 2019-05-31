@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
@@ -26,11 +28,13 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        
+        if AccessToken.isCurrentAccessTokenActive {
+            print("Already sign in")
+        }
     }
 
     @IBAction func signUpPressed(_ sender: Any) {
-        createUser()
+        createUserWithEmailAndPassword()
     }
     
     @IBAction func signinPressed(_ sender: Any) {
@@ -42,7 +46,62 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     @IBAction func signinWithFacebookPressed(_ sender: Any) {
-        // Sign in with facebook
+        let fbLoginManager = LoginManager()
+        
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+                return
+            }
+            guard let accessToken = AccessToken.current else {
+                print("Failed to get accesss token")
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            
+            Auth.auth().signInAndRetrieveData(with: credential, completion: { (authResult, error) in
+                if let error = error {
+                    switch (error as NSError).code {
+                    case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                        let userInfo = (error as NSError).userInfo
+                        let email = userInfo["FIRAuthErrorUserInfoEmailKey"] as! String
+                        
+                        Auth.auth().fetchSignInMethods(forEmail: email, completion: { (methods, error) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            }
+                            if let methods = methods {
+                                if let latestMethod = methods.last {
+                                    
+                                    if latestMethod == "google.com" {
+                                        
+                                        let alert = UIAlertController(title: "This Fb email was already signed in with Google", message: "Please sign in with Google directly", preferredStyle: .alert)
+                                        let alertAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+                                        alert.addAction(alertAction)
+                                        self.present(alert, animated: true, completion: nil)
+                                        
+                                    } else if latestMethod == "password" {
+                                        
+                                        let alert = UIAlertController(title: "This Fb email was already signed in with email/password", message: "Please sign in with email/password directly", preferredStyle: .alert)
+                                        let alertAction = UIAlertAction(title: "ok", style: .default, handler: { (action) in
+                                            alert.dismiss(animated: true, completion: nil)
+                                            self.performSegue(withIdentifier: Segue.signin, sender: nil)
+                                        })
+                                        alert.addAction(alertAction)
+                                        self.present(alert, animated: true, completion: nil)
+                                    }
+                                }
+                            }
+                        })
+                        
+                    default:
+                        return
+                    }
+                    
+                }
+            })
+        }
     }
     
     private func setupTapGestureRecognizer() {
@@ -54,7 +113,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         view.endEditing(true)
     }
     
-    private func createUser() {
+    private func createUserWithEmailAndPassword() {
         guard let email = emailTextField.text, emailTextField.text != "" else {
             let alert = UIAlertController(title: "Email must not be empty.", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
@@ -101,7 +160,13 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
                 }
                 return
             }
-            print("CREATE USER!")
+            
+            // Sign in after user is created
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            })
         }
     }
     
@@ -117,7 +182,7 @@ extension AuthViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             textField.resignFirstResponder()
-            createUser()
+            createUserWithEmailAndPassword()
         }
         return true
     }
