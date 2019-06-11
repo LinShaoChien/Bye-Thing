@@ -1,0 +1,6 @@
+framework module Pods_Bye_Thing {
+  umbrella header "Pods-Bye Thing-umbrella.h"
+
+  export *
+  module * { export * }
+}

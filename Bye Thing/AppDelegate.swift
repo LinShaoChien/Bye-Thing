@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import FirebaseAuth
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -19,17 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IQKeyboardManager.shared.enable = true
         
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let authViewController = storyboard.instantiateViewController(withIdentifier: "signupViewController") as! AuthViewController
+        FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
         if let window = self.window {
-            window.rootViewController = authViewController
+            if Auth.auth().currentUser == nil {
+                let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+                let authViewController = storyboard.instantiateViewController(withIdentifier: "signupViewController") as! AuthViewController
+                window.rootViewController = authViewController
+            } else {
+                let storyboard = UIStoryboard(name: "Inventory", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+                window.rootViewController = mainTabBarController
+            }
+            
         }
         
-        FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -76,7 +85,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 }
                 return
             }
+            
             // Do something after the user is sign in
+            if let authResult = authResult {
+                if authResult.additionalUserInfo!.isNewUser {
+                    let uid = authResult.user.uid
+                    if let email = authResult.user.email {
+                        FirestoreServices.sharedInstance.createUser(uid: uid, email: email)
+                    }
+                }
+            }
         }
     }
     

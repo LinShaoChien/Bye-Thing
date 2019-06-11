@@ -11,7 +11,6 @@
 		EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059721229C2A3E00B54552 /* AppDelegate.swift */; };
 		EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059723229C2A3E00B54552 /* AuthViewController.swift */; };
 		EF059727229C2A3E00B54552 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF059725229C2A3E00B54552 /* Auth.storyboard */; };
-		EF059729229C2A3F00B54552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF059728229C2A3F00B54552 /* Assets.xcassets */; };
 		EF05972C229C2A3F00B54552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */; };
 		EF059747229C455B00B54552 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059735229C455B00B54552 /* Montserrat-Regular.otf */; };
 		EF059748229C455B00B54552 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059736229C455B00B54552 /* Montserrat-SemiBold.otf */; };
@@ -25,7 +24,23 @@
 		EF05975E229D05D300B54552 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975D229D05D300B54552 /* AuthButton.swift */; };
 		EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975F229D1C5700B54552 /* SigninViewController.swift */; };
 		EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF059761229D69BE00B54552 /* GoogleService-Info.plist */; };
-		EF059765229D6CC600B54552 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF059764229D6CC600B54552 /* AuthServices.swift */; };
+		EF126BFC22AA21D900AE12B9 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF126BFB22AA21D900AE12B9 /* StorageServices.swift */; };
+		EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */; };
+		EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890122AE6431009B7013 /* RoundedCornerView.swift */; };
+		EF73890622AE6584009B7013 /* InventoryTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */; };
+		EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */; };
+		EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */; };
+		EFA00E9822A2E51800B03A66 /* Inventory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA00E9722A2E51800B03A66 /* Inventory.storyboard */; };
+		EFA00E9E22A2EB0400B03A66 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA00E9D22A2EB0400B03A66 /* assets.xcassets */; };
+		EFA00EA022A2ECDA00B03A66 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00E9F22A2ECDA00B03A66 /* InventoryViewController.swift */; };
+		EFA00EA222A2ED0800B03A66 /* AddNewInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA122A2ED0800B03A66 /* AddNewInventoryViewController.swift */; };
+		EFA00EA422A3DEFD00B03A66 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA322A3DEFD00B03A66 /* LogOutViewController.swift */; };
+		EFA00EA622A434F300B03A66 /* InventoryDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */; };
+		EFA00EA822A43DC500B03A66 /* InventoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA722A43DC500B03A66 /* InventoryType.swift */; };
+		EFE25E5D22ACDA33002BAB1B /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE25E5C22ACDA33002BAB1B /* Inventory.swift */; };
+		EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */; };
+		EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */; };
+		EFF0C13F22AFCA7A0094D4EC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +51,6 @@
 		EF059721229C2A3E00B54552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF059723229C2A3E00B54552 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		EF059726229C2A3E00B54552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
-		EF059728229C2A3F00B54552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF05972B229C2A3F00B54552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF05972D229C2A3F00B54552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF059735229C455B00B54552 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Regular.otf"; sourceTree = "<group>"; };
@@ -51,7 +65,23 @@
 		EF05975D229D05D300B54552 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		EF05975F229D1C5700B54552 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		EF059761229D69BE00B54552 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EF059764229D6CC600B54552 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		EF126BFB22AA21D900AE12B9 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
+		EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCellLabelsView.swift; sourceTree = "<group>"; };
+		EF73890122AE6431009B7013 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryTypeCollectionViewCell.swift; path = ../../../../../.Trash/InventoryTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableVIewCellImageView.swift; sourceTree = "<group>"; };
+		EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
+		EFA00E9722A2E51800B03A66 /* Inventory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inventory.storyboard; sourceTree = "<group>"; };
+		EFA00E9D22A2EB0400B03A66 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		EFA00E9F22A2ECDA00B03A66 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		EFA00EA122A2ED0800B03A66 /* AddNewInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewInventoryViewController.swift; sourceTree = "<group>"; };
+		EFA00EA322A3DEFD00B03A66 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDescriptionTextView.swift; sourceTree = "<group>"; };
+		EFA00EA722A43DC500B03A66 /* InventoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryType.swift; sourceTree = "<group>"; };
+		EFE25E5C22ACDA33002BAB1B /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				EF059720229C2A3E00B54552 /* Bye Thing */,
+				EFA00E9D22A2EB0400B03A66 /* assets.xcassets */,
 				EF05971F229C2A3E00B54552 /* Products */,
 				1A1DA935508433143E94E5E2 /* Pods */,
 				3184776AA6C98106A8BD1FE8 /* Frameworks */,
@@ -104,14 +135,12 @@
 		EF059720229C2A3E00B54552 /* Bye Thing */ = {
 			isa = PBXGroup;
 			children = (
+				EFA00E9C22A2E58700B03A66 /* Storyboards */,
 				EF059763229D6C9600B54552 /* Services */,
 				EF05975A229D04C100B54552 /* Models */,
-				EF059759229D04BB00B54552 /* VIews */,
+				EF059759229D04BB00B54552 /* Views */,
 				EF059758229D04B000B54552 /* Controllers */,
 				EF059721229C2A3E00B54552 /* AppDelegate.swift */,
-				EF059725229C2A3E00B54552 /* Auth.storyboard */,
-				EF059728229C2A3F00B54552 /* Assets.xcassets */,
-				EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
 				EF059761229D69BE00B54552 /* GoogleService-Info.plist */,
 				EF059733229C453500B54552 /* Fonts */,
@@ -138,23 +167,30 @@
 		EF059758229D04B000B54552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF059723229C2A3E00B54552 /* AuthViewController.swift */,
-				EF05975F229D1C5700B54552 /* SigninViewController.swift */,
+				EFA00E9B22A2E56100B03A66 /* Inventory */,
+				EFA00E9922A2E53C00B03A66 /* Auth */,
+				EFF0C13B22AFC3670094D4EC /* Discover */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		EF059759229D04BB00B54552 /* VIews */ = {
+		EF059759229D04BB00B54552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				EF05975D229D05D300B54552 /* AuthButton.swift */,
+				EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */,
+				EF73890122AE6431009B7013 /* RoundedCornerView.swift */,
+				EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */,
+				EF73890922AE6653009B7013 /* InventoryTalbeViewCell */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EF05975A229D04C100B54552 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFA00EA722A43DC500B03A66 /* InventoryType.swift */,
+				EFE25E5C22ACDA33002BAB1B /* Inventory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,9 +198,58 @@
 		EF059763229D6C9600B54552 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EF059764229D6CC600B54552 /* AuthServices.swift */,
+				EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */,
+				EF126BFB22AA21D900AE12B9 /* StorageServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EF73890922AE6653009B7013 /* InventoryTalbeViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */,
+				EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */,
+				EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */,
+			);
+			path = InventoryTalbeViewCell;
+			sourceTree = "<group>";
+		};
+		EFA00E9922A2E53C00B03A66 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EF059723229C2A3E00B54552 /* AuthViewController.swift */,
+				EF05975F229D1C5700B54552 /* SigninViewController.swift */,
+				EFA00EA322A3DEFD00B03A66 /* LogOutViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		EFA00E9B22A2E56100B03A66 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				EFA00E9F22A2ECDA00B03A66 /* InventoryViewController.swift */,
+				EFA00EA122A2ED0800B03A66 /* AddNewInventoryViewController.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		EFA00E9C22A2E58700B03A66 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF059725229C2A3E00B54552 /* Auth.storyboard */,
+				EFA00E9722A2E51800B03A66 /* Inventory.storyboard */,
+				EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */,
+				EF05972A229C2A3F00B54552 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EFF0C13B22AFC3670094D4EC /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,10 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */,
+				EFA00E9822A2E51800B03A66 /* Inventory.storyboard in Resources */,
 				EF059752229C455B00B54552 /* Montserrat-ExtraBold.otf in Resources */,
+				EFF0C13F22AFCA7A0094D4EC /* Discover.storyboard in Resources */,
 				EF05972C229C2A3F00B54552 /* LaunchScreen.storyboard in Resources */,
 				EF059756229C455B00B54552 /* Montserrat-Thin.otf in Resources */,
-				EF059729229C2A3F00B54552 /* Assets.xcassets in Resources */,
 				EF059748229C455B00B54552 /* Montserrat-SemiBold.otf in Resources */,
 				EF059750229C455B00B54552 /* Montserrat-Bold.otf in Resources */,
 				EF05974C229C455B00B54552 /* Montserrat-Black.otf in Resources */,
@@ -240,6 +326,7 @@
 				EF059727229C2A3E00B54552 /* Auth.storyboard in Resources */,
 				EF059754229C455B00B54552 /* Montserrat-ExtraLight.otf in Resources */,
 				EF059757229C455B00B54552 /* Montserrat-Medium.otf in Resources */,
+				EFA00E9E22A2EB0400B03A66 /* assets.xcassets in Resources */,
 				EF05974A229C455B00B54552 /* Montserrat-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,20 +359,32 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bye Thing/Pods-Bye Thing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,11 +417,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF059765229D6CC600B54552 /* AuthServices.swift in Sources */,
+				EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */,
 				EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */,
+				EFA00EA022A2ECDA00B03A66 /* InventoryViewController.swift in Sources */,
+				EFA00EA822A43DC500B03A66 /* InventoryType.swift in Sources */,
 				EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */,
+				EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */,
+				EF73890622AE6584009B7013 /* InventoryTypeCollectionViewCell.swift in Sources */,
+				EFA00EA622A434F300B03A66 /* InventoryDescriptionTextView.swift in Sources */,
 				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
+				EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */,
+				EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */,
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,
+				EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */,
+				EFA00EA222A2ED0800B03A66 /* AddNewInventoryViewController.swift in Sources */,
+				EFA00EA422A3DEFD00B03A66 /* LogOutViewController.swift in Sources */,
+				EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */,
+				EFE25E5D22ACDA33002BAB1B /* Inventory.swift in Sources */,
+				EF126BFC22AA21D900AE12B9 /* StorageServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
