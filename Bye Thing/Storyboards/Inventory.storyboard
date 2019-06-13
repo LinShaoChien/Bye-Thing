@@ -345,8 +345,8 @@
                         <color key="selectedImageTintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iya-tj-6Va" kind="relationship" relationship="viewControllers" id="XhQ-R4-uZ9"/>
                         <segue destination="OIp-O6-oow" kind="relationship" relationship="viewControllers" id="0Y5-5A-h1L"/>
+                        <segue destination="iya-tj-6Va" kind="relationship" relationship="viewControllers" id="XhQ-R4-uZ9"/>
                         <segue destination="J8J-nq-BKE" kind="relationship" relationship="viewControllers" id="Fxc-wg-KLT"/>
                     </connections>
                 </tabBarController>
@@ -354,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="-307"/>
         </scene>
-        <!--DiscoverViewController-->
+        <!--NavigationViewController-->
         <scene sceneID="9rD-iK-28A">
             <objects>
-                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="DiscoverViewController" id="OIp-O6-oow" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="NavigationViewController" id="OIp-O6-oow" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8wn-bO-QeE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBa-la-p7l" userLabel="First Responder" sceneMemberID="firstResponder"/>

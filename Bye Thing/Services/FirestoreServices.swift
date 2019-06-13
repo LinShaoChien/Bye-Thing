@@ -129,5 +129,17 @@ class FirestoreServices {
         }
     }
     
+    // Create Inventory
+    func create(inventory: Inventory, completion: @escaping (Error?) -> ()) {
+        db.collection("inventories").addDocument(data: [
+            "userID": inventory.,
+            "lastModifyDate": String,
+        ]) { (error) in
+            if let error = error {
+                
+            }
+        }
+    }
+    
     
 }

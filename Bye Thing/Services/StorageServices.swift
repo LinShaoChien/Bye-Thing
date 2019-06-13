@@ -15,6 +15,7 @@ class StorageServices {
     
     private let storage = Storage.storage()
     
+    // MARK: -
     func upload(data: Data, withName name: String, inChild child: String, completion: @escaping (Bool, Error?) -> ()) {
         let storageRef = storage.reference().child(child + "/" + name)
         storageRef.putData(data, metadata: nil) { (metadata, error) in
@@ -26,6 +27,7 @@ class StorageServices {
         }
     }
     
+    // MARK: -
     func download(imageID: String, completion: @escaping (UIImage?, Error?) -> ()) {
         let imageRef = storage.reference().child("images/" + imageID + ".jpeg")
         imageRef.getData(maxSize: 2 * 1024 * 1024) { (data, error) in
@@ -38,6 +40,7 @@ class StorageServices {
         }
     }
     
+    // MARK: -
     func delete(imageID: String, completion: @escaping (Error?) -> ()) {
         let imageRef = storage.reference().child("images/" + imageID + ".jpeg")
         imageRef.delete { (error) in

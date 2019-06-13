@@ -135,12 +135,12 @@
 		EF059720229C2A3E00B54552 /* Bye Thing */ = {
 			isa = PBXGroup;
 			children = (
-				EFA00E9C22A2E58700B03A66 /* Storyboards */,
+				EFF0C14022B201B00094D4EC /* App Delegates */,
 				EF059763229D6C9600B54552 /* Services */,
+				EFA00E9C22A2E58700B03A66 /* Storyboards */,
 				EF05975A229D04C100B54552 /* Models */,
 				EF059759229D04BB00B54552 /* Views */,
 				EF059758229D04B000B54552 /* Controllers */,
-				EF059721229C2A3E00B54552 /* AppDelegate.swift */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
 				EF059761229D69BE00B54552 /* GoogleService-Info.plist */,
 				EF059733229C453500B54552 /* Fonts */,
@@ -181,7 +181,8 @@
 				EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */,
 				EF73890122AE6431009B7013 /* RoundedCornerView.swift */,
 				EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */,
-				EF73890922AE6653009B7013 /* InventoryTalbeViewCell */,
+				EF73890922AE6653009B7013 /* Inventory Table View Cell */,
+				EFF0C14322B2084D0094D4EC /* Discover Table View Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,14 +205,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		EF73890922AE6653009B7013 /* InventoryTalbeViewCell */ = {
+		EF73890922AE6653009B7013 /* Inventory Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */,
 				EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */,
 				EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */,
 			);
-			path = InventoryTalbeViewCell;
+			path = "Inventory Table View Cell";
 			sourceTree = "<group>";
 		};
 		EFA00E9922A2E53C00B03A66 /* Auth */ = {
@@ -250,6 +251,21 @@
 				EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */,
 			);
 			path = Discover;
+			sourceTree = "<group>";
+		};
+		EFF0C14022B201B00094D4EC /* App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EF059721229C2A3E00B54552 /* AppDelegate.swift */,
+			);
+			path = "App Delegates";
+			sourceTree = "<group>";
+		};
+		EFF0C14322B2084D0094D4EC /* Discover Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Discover Table View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
