@@ -19,9 +19,6 @@
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
         </array>
-        <array key="Montserrat-SemiBold.otf">
-            <string>Montserrat-SemiBold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Inventory-->
@@ -32,24 +29,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inventory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqN-Ki-c4Z">
-                                <rect key="frame" x="20" y="40" width="195.33333333333334" height="46.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="40"/>
-                                <color key="textColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-mU-SGL">
-                                <rect key="frame" x="351" y="48" width="33" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="sgW-mU-SGL" secondAttribute="height" multiplier="1:1" id="Feg-nq-Jva"/>
-                                </constraints>
-                                <state key="normal" image="plus"/>
-                                <connections>
-                                    <action selector="plusPressed:" destination="wIf-Bx-Lwj" eventType="touchUpInside" id="PF8-Sr-i2o"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cqc-5C-eUs">
-                                <rect key="frame" x="20" y="94.666666666666686" width="374" height="592.33333333333326"/>
+                                <rect key="frame" x="20" y="72" width="374" height="615"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="inventoryCell" rowHeight="90" id="dMX-0D-V9L" customClass="InventoryTableViewCell" customModule="Bye_Thing" customModuleProvider="target">
@@ -128,29 +109,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cqc-5C-eUs" firstAttribute="leading" secondItem="jnH-Od-vrR" secondAttribute="leading" constant="20" id="At4-xN-RHc"/>
-                            <constraint firstItem="GqN-Ki-c4Z" firstAttribute="width" secondItem="10J-ah-4Tt" secondAttribute="width" multiplier="177/375" id="Etv-Y5-32V"/>
-                            <constraint firstItem="sgW-mU-SGL" firstAttribute="bottom" secondItem="GqN-Ki-c4Z" secondAttribute="baseline" constant="3" id="JkI-mC-da3"/>
-                            <constraint firstItem="GqN-Ki-c4Z" firstAttribute="leading" secondItem="jnH-Od-vrR" secondAttribute="leading" constant="20" id="aNE-xI-Ni3"/>
                             <constraint firstItem="jnH-Od-vrR" firstAttribute="trailing" secondItem="Cqc-5C-eUs" secondAttribute="trailing" constant="20" id="ceh-iA-l0P"/>
                             <constraint firstItem="Cqc-5C-eUs" firstAttribute="bottom" secondItem="jnH-Od-vrR" secondAttribute="bottom" id="gzO-PM-K4a"/>
                             <constraint firstItem="Cqc-5C-eUs" firstAttribute="centerX" secondItem="10J-ah-4Tt" secondAttribute="centerX" id="hLE-MI-XUX"/>
-                            <constraint firstItem="sgW-mU-SGL" firstAttribute="width" secondItem="10J-ah-4Tt" secondAttribute="width" multiplier="30/375" id="hao-xd-uw0"/>
-                            <constraint firstItem="jnH-Od-vrR" firstAttribute="trailing" secondItem="sgW-mU-SGL" secondAttribute="trailing" constant="30" id="oCS-RW-lD1"/>
-                            <constraint firstItem="Cqc-5C-eUs" firstAttribute="top" secondItem="GqN-Ki-c4Z" secondAttribute="bottom" constant="8" id="vBC-E6-U6Y"/>
-                            <constraint firstItem="GqN-Ki-c4Z" firstAttribute="top" secondItem="jnH-Od-vrR" secondAttribute="top" constant="20" id="zTS-XL-oFp"/>
+                            <constraint firstItem="Cqc-5C-eUs" firstAttribute="top" secondItem="jnH-Od-vrR" secondAttribute="top" constant="8" id="rK4-t4-v13"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jnH-Od-vrR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Inventory" image="inventory_unselected" selectedImage="inventory_selected" id="EHx-Ts-ebZ"/>
+                    <navigationItem key="navigationItem" title="Inventory" id="WUb-QD-5Dq">
+                        <barButtonItem key="backBarButtonItem" title=" " id="9PI-G8-V13"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="zS0-ku-3WN">
+                            <color key="tintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="plusPressed:" destination="wIf-Bx-Lwj" id="6Wx-U5-3x3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="sgW-mU-SGL" id="tgG-UJ-4nU"/>
                         <outlet property="inventoryTableView" destination="Cqc-5C-eUs" id="dIX-Qw-x3F"/>
-                        <segue destination="PQ3-BF-pmB" kind="presentation" identifier="toAddNewInventory" modalPresentationStyle="fullScreen" id="GqK-HE-9h2"/>
+                        <outlet property="navigationItem" destination="WUb-QD-5Dq" id="1NC-Mh-HGv"/>
+                        <segue destination="PQ3-BF-pmB" kind="show" identifier="toAddNewInventory" id="KhM-UE-WzG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M81-cf-aaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="-660"/>
+            <point key="canvasLocation" x="826.08695652173924" y="-660.32608695652175"/>
         </scene>
         <!--Item-->
         <scene sceneID="PiI-ym-cSq">
@@ -201,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="-80" y="123"/>
         </scene>
-        <!--Add New Inventory View Controller-->
+        <!--Create Inventory-->
         <scene sceneID="NI0-WL-eru">
             <objects>
                 <viewController id="PQ3-BF-pmB" customClass="AddNewInventoryViewController" customModule="Bye_Thing" customModuleProvider="target" sceneMemberID="viewController">
@@ -209,39 +192,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ZO-iY-uRV">
-                                <rect key="frame" x="20" y="20" width="374" height="33"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz2-Cl-JQG">
-                                        <rect key="frame" x="0.0" y="0.0" width="58" height="33"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelPressed:" destination="PQ3-BF-pmB" eventType="touchUpInside" id="8Dk-T2-GLx"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Inventory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTT-7O-VQD">
-                                        <rect key="frame" x="119.66666666666666" y="0.0" width="145.99999999999997" height="33"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                        <color key="textColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofr-oi-c6Y">
-                                        <rect key="frame" x="327" y="0.0" width="47" height="33"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="donePressed:" destination="PQ3-BF-pmB" eventType="touchUpInside" id="VKz-QC-CPg"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZqN-aG-av4">
-                                <rect key="frame" x="57" y="63" width="300" height="549.33333333333337"/>
+                                <rect key="frame" x="57" y="72" width="300" height="549.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-HK-1K8" customClass="InventoryImageView" customModule="Bye_Thing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300.33333333333331"/>
@@ -356,13 +308,18 @@
                         <constraints>
                             <constraint firstItem="ZqN-aG-av4" firstAttribute="centerX" secondItem="oYi-It-FK6" secondAttribute="centerX" id="0HW-Gu-mha"/>
                             <constraint firstItem="ZqN-aG-av4" firstAttribute="width" secondItem="oYi-It-FK6" secondAttribute="width" multiplier="272/375" id="KQz-Hv-22H"/>
-                            <constraint firstItem="3ZO-iY-uRV" firstAttribute="leading" secondItem="4a3-6G-fUW" secondAttribute="leading" constant="20" id="TiI-aZ-nYM"/>
-                            <constraint firstItem="ZqN-aG-av4" firstAttribute="top" secondItem="3ZO-iY-uRV" secondAttribute="bottom" constant="10" id="a3C-AL-9an"/>
-                            <constraint firstItem="4a3-6G-fUW" firstAttribute="trailing" secondItem="3ZO-iY-uRV" secondAttribute="trailing" constant="20" id="lHF-KP-YVa"/>
-                            <constraint firstItem="3ZO-iY-uRV" firstAttribute="top" secondItem="oYi-It-FK6" secondAttribute="top" constant="20" id="rVC-CP-wpU"/>
+                            <constraint firstItem="ZqN-aG-av4" firstAttribute="top" secondItem="4a3-6G-fUW" secondAttribute="top" constant="8" id="vaP-7d-HHz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4a3-6G-fUW"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Inventory" id="w1g-Wc-hpo">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="4Nb-vi-1uF">
+                            <color key="tintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="donePressed:" destination="PQ3-BF-pmB" id="anl-ii-cds"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="inventoryDescriptionTextView" destination="eBy-Tr-59M" id="oLa-In-qFr"/>
                         <outlet property="inventoryImageView" destination="fkS-HK-1K8" id="m4r-hw-9Xc"/>
@@ -371,12 +328,11 @@
                         <outlet property="inventoryTypeCollectionViewFlowLayout" destination="Yys-ow-isp" id="tod-F4-hw2"/>
                         <outlet property="mainStackView" destination="ZqN-aG-av4" id="ASY-4e-yTV"/>
                         <outlet property="selectPhotoIndicatorStackView" destination="kbw-uw-NmU" id="5DF-CY-xeH"/>
-                        <outlet property="titleLabel" destination="TTT-7O-VQD" id="FFr-Yi-fZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBP-tf-rXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-659"/>
+            <point key="canvasLocation" x="1720.289855072464" y="-659.51086956521749"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9Np-3Y-wPW">
@@ -389,7 +345,7 @@
                         <color key="selectedImageTintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wIf-Bx-Lwj" kind="relationship" relationship="viewControllers" id="XhQ-R4-uZ9"/>
+                        <segue destination="iya-tj-6Va" kind="relationship" relationship="viewControllers" id="XhQ-R4-uZ9"/>
                         <segue destination="OIp-O6-oow" kind="relationship" relationship="viewControllers" id="0Y5-5A-h1L"/>
                         <segue destination="J8J-nq-BKE" kind="relationship" relationship="viewControllers" id="Fxc-wg-KLT"/>
                     </connections>
@@ -408,11 +364,32 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="157"/>
         </scene>
+        <!--Inventory-->
+        <scene sceneID="2nN-YP-AMB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iya-tj-6Va" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inventory" image="inventory_unselected" selectedImage="inventory_selected" id="EHx-Ts-ebZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CKJ-xh-ivj">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wIf-Bx-Lwj" kind="relationship" relationship="rootViewController" id="UBP-VQ-WpN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCw-b4-IZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81.159420289855078" y="-660.32608695652175"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="50" height="50"/>
         <image name="inventory_selected" width="30" height="30"/>
         <image name="inventory_unselected" width="30" height="30"/>
-        <image name="plus" width="40" height="40"/>
     </resources>
 </document>

@@ -13,7 +13,7 @@ class InventoryViewController: UIViewController {
 
     // Subviews
     @IBOutlet weak var inventoryTableView: UITableView!
-    @IBOutlet weak var addButton: UIButton!
+
     var indicator: UIActivityIndicatorView!
     
     // Variables
@@ -36,6 +36,18 @@ class InventoryViewController: UIViewController {
         getAllInventory()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updataInventory(_:)), name: NSNotification.Name("didAddNewInventory"), object: nil)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1),
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-Regular", size: 18)!
+        ]
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2979793549, blue: 0, alpha: 1)
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1),
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-SemiBold", size: 34)!
+        ]
     }
     
     deinit {
@@ -84,7 +96,7 @@ class InventoryViewController: UIViewController {
     func getAllInventory() {
         
         indicator.startAnimating()
-        addButton.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         let uid = Auth.auth().currentUser!.uid
         
@@ -97,7 +109,7 @@ class InventoryViewController: UIViewController {
                 self.inventories = inventorylist!
                 self.inventoryTableView.reloadData()
                 self.indicator.stopAnimating()
-                self.addButton.isEnabled = true
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
         }
     }
@@ -105,7 +117,7 @@ class InventoryViewController: UIViewController {
     @objc func updataInventory(_ notification: Notification) {
         
         indicator.startAnimating()
-        addButton.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         let uid = Auth.auth().currentUser!.uid
         FirestoreServices.sharedInstance.getAllInventory(uid: uid) { (inventorylist, error) in
@@ -117,13 +129,14 @@ class InventoryViewController: UIViewController {
                 self.inventories = inventorylist!
                 self.inventoryTableView.reloadData()
                 self.indicator.stopAnimating()
-                self.addButton.isEnabled = true
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
         }
     }
 
     @IBAction func plusPressed(_ sender: Any) {
         performSegue(withIdentifier: Segue.AddNewInventory, sender: nil)
+        
     }
     
 }

@@ -23,7 +23,6 @@ class AddNewInventoryViewController: UIViewController {
         }
     }
     @IBOutlet weak var mainStackView: UIStackView!
-    @IBOutlet weak var titleLabel: UILabel!
     
     
     // MARK: - Variables
@@ -56,7 +55,7 @@ class AddNewInventoryViewController: UIViewController {
         configureInventoryImageView()
         
         if isEditMode {
-            titleLabel.text = "Edit Inventory"
+            navigationItem.title = "Edit Inventory"
             inventoryNameTextField.text = currentInventory!.name
             inventoryDescriptionTextView.text = currentInventory!.description
             inventoryDescriptionTextView.textColor = UIColor.black
@@ -70,6 +69,12 @@ class AddNewInventoryViewController: UIViewController {
             }
             
         }
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-SemiBold", size: 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1)
+        ], for: .normal)
     }
     
     deinit {
@@ -77,9 +82,6 @@ class AddNewInventoryViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func cancelPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func donePressed(_ sender: Any) {
         if let currentUser = Auth.auth().currentUser {
