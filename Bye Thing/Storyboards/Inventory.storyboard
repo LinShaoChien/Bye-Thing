@@ -118,7 +118,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Inventory" id="WUb-QD-5Dq">
                         <barButtonItem key="backBarButtonItem" title=" " id="9PI-G8-V13"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="zS0-ku-3WN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zS0-ku-3WN">
                             <color key="tintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="plusPressed:" destination="wIf-Bx-Lwj" id="6Wx-U5-3x3"/>
@@ -264,7 +264,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fj5-45-pcK">
-                                                            <rect key="frame" x="5" y="8.0000000000000018" width="38.666666666666664" height="17.666666666666671"/>
+                                                            <rect key="frame" x="5" y="8" width="38.666666666666664" height="18"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                             <color key="textColor" red="0.1764705882" green="0.51372549020000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -272,12 +272,12 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Fj5-45-pcK" secondAttribute="trailing" constant="5" id="2eJ-kf-Mh5"/>
+                                                    <constraint firstItem="Fj5-45-pcK" firstAttribute="leading" secondItem="7hv-Y3-ZEj" secondAttribute="leading" constant="5" id="5lt-8H-AN9"/>
                                                     <constraint firstItem="Fj5-45-pcK" firstAttribute="centerX" secondItem="7hv-Y3-ZEj" secondAttribute="centerX" id="BAK-YK-kLX"/>
+                                                    <constraint firstItem="Fj5-45-pcK" firstAttribute="top" secondItem="7hv-Y3-ZEj" secondAttribute="top" constant="8" id="PWl-IC-mvm"/>
                                                     <constraint firstItem="Fj5-45-pcK" firstAttribute="centerY" secondItem="7hv-Y3-ZEj" secondAttribute="centerY" id="XMg-tB-cLr"/>
-                                                    <constraint firstItem="Fj5-45-pcK" firstAttribute="leading" secondItem="7hv-Y3-ZEj" secondAttribute="leading" constant="5" id="cf0-os-ytV"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Fj5-45-pcK" secondAttribute="bottom" constant="8" id="hul-UI-EYm"/>
-                                                    <constraint firstItem="Fj5-45-pcK" firstAttribute="top" secondItem="7hv-Y3-ZEj" secondAttribute="top" constant="8" id="lbe-mR-VRe"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Fj5-45-pcK" secondAttribute="bottom" constant="8" id="p2y-U0-srM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fj5-45-pcK" secondAttribute="trailing" constant="5" id="zOd-TG-rcO"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="inventoryTypeLabel" destination="Fj5-45-pcK" id="lwX-gy-5Dx"/>
