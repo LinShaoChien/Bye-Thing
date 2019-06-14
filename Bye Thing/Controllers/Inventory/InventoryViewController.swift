@@ -100,18 +100,24 @@ class InventoryViewController: UIViewController {
         
         let uid = Auth.auth().currentUser!.uid
         
-        FirestoreServices.sharedInstance.getAllInventory(uid: uid) { (inventorylist, error) in
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid) { (inventories, error) in
             if let error = error {
+                print(error.localizedDescription)
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-            } else {
-                self.inventories = inventorylist!
-                self.inventoryTableView.reloadData()
                 self.indicator.stopAnimating()
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
+            } else {
+                if let inventories = inventories {
+                    self.inventories = inventories
+                    self.inventoryTableView.reloadData()
+                    self.indicator.stopAnimating()
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                }
             }
         }
+
     }
     
     @objc func updataInventory(_ notification: Notification) {
@@ -120,16 +126,18 @@ class InventoryViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         let uid = Auth.auth().currentUser!.uid
-        FirestoreServices.sharedInstance.getAllInventory(uid: uid) { (inventorylist, error) in
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid) { (inventories, error) in
             if let error = error {
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             } else {
-                self.inventories = inventorylist!
-                self.inventoryTableView.reloadData()
-                self.indicator.stopAnimating()
-                self.navigationItem.rightBarButtonItem?.isEnabled = true
+                if let inventories = inventories {
+                    self.inventories = inventories
+                    self.inventoryTableView.reloadData()
+                    self.indicator.stopAnimating()
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                }
             }
         }
     }

@@ -29,14 +29,14 @@ class InventoryTableViewCell: UITableViewCell {
         
         // Configure labels
         itemName.text = inventories[indexPath.row].name
-        let biddingStatus = inventories[indexPath.row].biddingStatus
-        switch biddingStatus {
+        let bidStatus = inventories[indexPath.row].bidStatus
+        switch bidStatus {
         case 0:
             self.biddingStatus.text = "No one is bidding yet"
         case 1:
             self.biddingStatus.text = "1 person is bidding"
         default:
-            self.biddingStatus.text = "\(biddingStatus) people are bidding"
+            self.biddingStatus.text = "\(bidStatus) people are bidding"
         }
         
         // Configure image

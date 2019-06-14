@@ -9,16 +9,30 @@
 import UIKit
 
 class Inventory {
-    let id: String,imageID: String, image: UIImage, name: String, type: InventoryType, description: String, lastModifyTime: Date, biddingStatus: Int
     
-    init(id: String, imageID: String, image: UIImage, name: String, type: InventoryType, description: String, lastModifyTime: Date, biddingStatus: Int) {
+    // MARK: - Properties
+    var id: String
+    var userid: String
+    var imageid: String
+    var image: UIImage
+    var name: String
+    var type: InventoryType
+    var description: String
+    var lastModified: Date
+    var bidStatus: Int
+    var bidWinner: String
+    
+    // MARK: - Init
+    init(id: String, userid: String, imageid: String, image: UIImage, name: String, type: InventoryType, description: String, lastModified: Date, bidStatus: Int, bidWinner: String) {
         self.id = id
-        self.imageID = imageID
+        self.userid = userid
+        self.imageid = imageid
         self.image = image
         self.name = name
         self.type = type
         self.description = description
-        self.lastModifyTime = lastModifyTime
-        self.biddingStatus = biddingStatus
+        self.lastModified = lastModified
+        self.bidStatus = bidStatus
+        self.bidWinner = bidWinner
     }
 }

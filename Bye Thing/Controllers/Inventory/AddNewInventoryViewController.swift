@@ -85,7 +85,7 @@ class AddNewInventoryViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         if let currentUser = Auth.auth().currentUser {
-            let uid = currentUser.uid
+            let userid = currentUser.uid
             
             // Check if the user did select/take an image
             guard let imageData = currentImage?.jpegData(compressionQuality: 1) else {
@@ -129,7 +129,7 @@ class AddNewInventoryViewController: UIViewController {
                 if didChangeInventoryImageInEditMode {
                     // User did change inventory image
                     // Delete old Image
-                    StorageServices.sharedInstance.delete(imageID: self.currentInventory!.imageID) { (error) in
+                    StorageServices.sharedInstance.delete(imageID: self.currentInventory!.imageid) { (error) in
                         // Handle error
                     }
                     
@@ -142,12 +142,12 @@ class AddNewInventoryViewController: UIViewController {
                             let itemType = self.inventoryTypes[indexPath.row].name
                             let date = Date()
                             
-                            FirestoreServices.sharedInstance.updateInventory(uid: uid, id: self.currentInventory!.id, imageID: randomImageID, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
+                            FirestoreServices.sharedInstance.updateInventory(uid: userid, id: self.currentInventory!.id, imageID: randomImageID, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
                                 if success {
                                     NotificationCenter.default.post(name: NSNotification.Name("didAddNewInventory"), object: nil)
                                     self.indicator.stopAnimating()
                                     UIApplication.shared.endIgnoringInteractionEvents()
-                                    self.dismiss(animated: true, completion: nil)
+                                    self.navigationController?.popViewController(animated: true)
                                 } else {
                                     /// Handle error
                                     self.indicator.stopAnimating()
@@ -167,12 +167,12 @@ class AddNewInventoryViewController: UIViewController {
                     let itemType = self.inventoryTypes[indexPath.row].name
                     let date = Date()
                     
-                    FirestoreServices.sharedInstance.updateInventory(uid: uid, id: self.currentInventory!.id, imageID: nil, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
+                    FirestoreServices.sharedInstance.updateInventory(uid: userid, id: self.currentInventory!.id, imageID: nil, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
                         if success {
                             NotificationCenter.default.post(name: NSNotification.Name("didAddNewInventory"), object: nil)
                             self.indicator.stopAnimating()
                             UIApplication.shared.endIgnoringInteractionEvents()
-                            self.dismiss(animated: true, completion: nil)
+                            self.navigationController?.popViewController(animated: true)
                         } else {
                             /// Handle error
                             self.indicator.stopAnimating()
@@ -189,25 +189,32 @@ class AddNewInventoryViewController: UIViewController {
                     if success {
                         
                         // Finally create an inventory in the firebase db
-                        let itemType = self.inventoryTypes[indexPath.row].name
-                        let date = Date()
-                        FirestoreServices.sharedInstance.createInventory(uid: uid, imageID: randomImageID, itemName: name, itemType: itemType
-                        , itemDescription: description, lastModifyTime: date) { (success, error) in
-                            if success {
+                        let id = UUID().uuidString
+                        let type = self.inventoryTypes[indexPath.row]
+                        let lastModified = Date()
+                        let image = UIImage()
+                        let inventory = Inventory(id: id, userid: userid, imageid: randomImageID, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: 0, bidWinner: "null")
+                        FirestoreServices.sharedInstance.createInventory(inventory: inventory, completion: { (error) in
+                            if let error = error {
+                                self.indicator.stopAnimating()
+                                UIApplication.shared.endIgnoringInteractionEvents()
+                                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            } else {
                                 NotificationCenter.default.post(name: NSNotification.Name("didAddNewInventory"), object: nil)
                                 self.indicator.stopAnimating()
                                 UIApplication.shared.endIgnoringInteractionEvents()
-                                self.dismiss(animated: true, completion: nil)
-                            } else {
-                                /// Handle error
-                                self.indicator.stopAnimating()
-                                UIApplication.shared.endIgnoringInteractionEvents()
+                                self.navigationController?.popViewController(animated: true)
                             }
-                        }
+                        })
+
                     } else {
-                        /// Handle error
                         self.indicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
+                        let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             }
