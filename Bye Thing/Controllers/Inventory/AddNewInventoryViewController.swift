@@ -198,8 +198,7 @@ class AddNewInventoryViewController: UIViewController {
                             if let error = error {
                                 self.indicator.stopAnimating()
                                 UIApplication.shared.endIgnoringInteractionEvents()
-                                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                                let alert = UIAlertController.errorAlert(error: error)
                                 self.present(alert, animated: true, completion: nil)
                             } else {
                                 NotificationCenter.default.post(name: NSNotification.Name("didAddNewInventory"), object: nil)
@@ -212,8 +211,7 @@ class AddNewInventoryViewController: UIViewController {
                     } else {
                         self.indicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
-                        let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                        let alert = UIAlertController.errorAlert(error: error!)
                         self.present(alert, animated: true, completion: nil)
                     }
                 }
@@ -238,7 +236,7 @@ class AddNewInventoryViewController: UIViewController {
         NSLayoutConstraint.activate([
             centerXConstraint,
             centerYConstraint
-            ])
+        ])
         
     }
     

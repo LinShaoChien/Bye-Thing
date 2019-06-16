@@ -32,6 +32,7 @@ class InventoryViewController: UIViewController {
         
         self.inventoryTableView.delegate = self
         self.inventoryTableView.dataSource = self
+        self.inventoryTableView.prefetchDataSource = self
         
         getAllInventory()
         
@@ -100,11 +101,11 @@ class InventoryViewController: UIViewController {
         
         let uid = Auth.auth().currentUser!.uid
         
-        FirestoreServices.sharedInstance.getInventories(ofUser: uid) { (inventories, error) in
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50) { (inventories, error) in
+            print(error?.localizedDescription)
             if let error = error {
                 print(error.localizedDescription)
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                let alert = UIAlertController.errorAlert(error: error)
                 self.present(alert, animated: true, completion: nil)
                 self.indicator.stopAnimating()
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
@@ -126,10 +127,9 @@ class InventoryViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         let uid = Auth.auth().currentUser!.uid
-        FirestoreServices.sharedInstance.getInventories(ofUser: uid) { (inventories, error) in
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50) { (inventories, error) in
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+                let alert = UIAlertController.errorAlert(error: error)
                 self.present(alert, animated: true, completion: nil)
             } else {
                 if let inventories = inventories {
@@ -171,6 +171,14 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         
         self.performSegue(withIdentifier: Segue.AddNewInventory, sender: indexPath)
+    }
+    
+}
+
+extension InventoryViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
     }
     
 }

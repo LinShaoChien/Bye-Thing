@@ -78,22 +78,38 @@ class FirestoreServices {
         }
     }
     
-    // MARK: - Get an user's all inventories
+    // MARK: - Get inventories
     
-    func getInventories(ofUser userid: String, completion: @escaping ([Inventory]?, Error?) -> ()) {
+    func getInventories(ofUser userid: String?, type: InventoryType?, name: String?, limit: Int, completion: @escaping ([Inventory]?, Error?) -> ()) {
         
-        let limit = 50
-        
+        let limit = limit
         var inventories: [Inventory] = []
         
         // Create compound query
-        let query = db.collection("inventories").whereField("userid", isEqualTo: userid).order(by: "lastModified", descending: false).limit(to: limit)
         
+        var query = db.collection("inventories").order(by: "lastModified", descending: false).limit(to: limit)
+        if let userid = userid {
+            query = query.whereField("userid", isEqualTo: userid)
+        }
+        if let type = type {
+            query = query.whereField("type", isEqualTo: type.name)
+        }
+        if let name = name {
+            query = query.whereField("name", isEqualTo: name)
+        }
+        
+        print("Getting Document")
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 completion(nil, error)
             } else {
+
                 if let snapshot = snapshot {
+                    
+                    guard snapshot.count != 0 else {
+                        completion(inventories, nil)
+                        return
+                    }
                     
                     for document in snapshot.documents {
                         
@@ -126,7 +142,5 @@ class FirestoreServices {
                 }
             }
         }
-        
-        
     }
 }

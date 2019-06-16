@@ -41,6 +41,7 @@
 		EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */; };
 		EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */; };
 		EFF0C13F22AFCA7A0094D4EC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */; };
+		EFF0C14622B3904C0094D4EC /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0C14522B3904C0094D4EC /* UIAlertControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
 		EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		EFF0C14522B3904C0094D4EC /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				EF05975A229D04C100B54552 /* Models */,
 				EF059759229D04BB00B54552 /* Views */,
 				EF059758229D04B000B54552 /* Controllers */,
+				EFF0C14422B390200094D4EC /* Extensions */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
 				EF059761229D69BE00B54552 /* GoogleService-Info.plist */,
 				EF059733229C453500B54552 /* Fonts */,
@@ -266,6 +269,14 @@
 			children = (
 			);
 			path = "Discover Table View Cell";
+			sourceTree = "<group>";
+		};
+		EFF0C14422B390200094D4EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFF0C14522B3904C0094D4EC /* UIAlertControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +457,7 @@
 				EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */,
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,
 				EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */,
+				EFF0C14622B3904C0094D4EC /* UIAlertControllerExtension.swift in Sources */,
 				EFA00EA222A2ED0800B03A66 /* AddNewInventoryViewController.swift in Sources */,
 				EFA00EA422A3DEFD00B03A66 /* LogOutViewController.swift in Sources */,
 				EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */,

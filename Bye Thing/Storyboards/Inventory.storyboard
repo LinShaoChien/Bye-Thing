@@ -345,8 +345,8 @@
                         <color key="selectedImageTintColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OIp-O6-oow" kind="relationship" relationship="viewControllers" id="0Y5-5A-h1L"/>
                         <segue destination="iya-tj-6Va" kind="relationship" relationship="viewControllers" id="XhQ-R4-uZ9"/>
+                        <segue destination="OIp-O6-oow" kind="relationship" relationship="viewControllers" id="0Y5-5A-h1L"/>
                         <segue destination="J8J-nq-BKE" kind="relationship" relationship="viewControllers" id="Fxc-wg-KLT"/>
                     </connections>
                 </tabBarController>
