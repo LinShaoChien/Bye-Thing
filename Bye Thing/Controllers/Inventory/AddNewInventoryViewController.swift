@@ -322,9 +322,9 @@ extension AddNewInventoryViewController: UIImagePickerControllerDelegate, UINavi
         self.currentImage = resizedImage
         if isEditMode {
             self.didChangeInventoryImageInEditMode = true
-            self.inventoryImageView.backgroundColor = UIColor(patternImage: resizedImage)
+            self.inventoryImage.image = resizedImage
         } else {
-            self.inventoryImageView.backgroundColor = UIColor(patternImage: resizedImage)
+            self.inventoryImage.image = resizedImage
             self.selectPhotoIndicatorStackView.isHidden = true
         }
         

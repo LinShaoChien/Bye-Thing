@@ -44,6 +44,19 @@ class FirestoreServices {
         }
     }
     
+    // MARL: - Delete inventory
+    
+    func deleteInventory(id: String, imageid: String, completion: @escaping (Error?) -> ()) {
+        StorageServices.sharedInstance.delete(imageID: imageid) { (error) in
+            if let error = error {
+                completion(error)
+            } else {
+                self.db.collection("inventories").document(id).delete()
+                completion(nil)
+            }
+        }
+    }
+    
     // MARK: - Update inventory
     
     func updateInventory(uid: String, id: String, imageID: String?, itemName: String, itemType: String, itemDescription: String, lastModifyTime: Date, completion: @escaping (Bool, Error?) -> ()) {
@@ -143,23 +156,6 @@ class FirestoreServices {
                                 }
                             }
                         })
-                        
-                        
-                        
-//                        StorageServices.sharedInstance.download(imageID: imageid, completion: { (image, error) in
-//                            if let error = error {
-//                                completion(nil, nil, error)
-//                            } else {
-//                                if let image = image {
-//                                    let inventory = Inventory(id: id, userid: userid, imageid: imageid, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: bidStatus, bidWinner: bidWinner)
-//                                    inventories.append(inventory)
-//                                    inventories.sort(by: {$0.lastModified > $1.lastModified})
-//                                    if inventories.count == snapshot.documents.count {
-//                                        completion(inventories, documents, nil)
-//                                    }
-//                                }
-//                            }
-//                        })
                     }
                 }
             }

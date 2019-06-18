@@ -181,9 +181,32 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: false)
         
-        self.performSegue(withIdentifier: Segue.AddNewInventory, sender: indexPath)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (action) in
+            self.performSegue(withIdentifier: Segue.AddNewInventory, sender: indexPath)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+            if let inventories = self.inventories {
+                let id = inventories[indexPath.row].id
+                let imageid = inventories[indexPath.row].imageid
+                FirestoreServices.sharedInstance.deleteInventory(id: id, imageid: imageid, completion: { (error) in
+                    if let error = error {
+                        self.present(UIAlertController.errorAlert(error: error), animated: true, completion: nil)
+                    } else {
+                        self.getAllInventory()
+                        self.inventoryTableView.reloadData()
+                    }
+                })
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
 }
