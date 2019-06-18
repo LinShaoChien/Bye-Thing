@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import SDWebImage
 
 class AddNewInventoryViewController: UIViewController {
 
     // MARK: - Subviews
     @IBOutlet weak var inventoryImageView: UIView!
+    @IBOutlet weak var inventoryImage: UIImageView!
     @IBOutlet weak var inventoryNameTextField: UITextField!
     @IBOutlet weak var inventoryTypeCollectionView: UICollectionView!
     @IBOutlet weak var inventoryDescriptionTextView: InventoryDescriptionTextView!
@@ -185,8 +187,8 @@ class AddNewInventoryViewController: UIViewController {
                         let id = UUID().uuidString
                         let type = INVENTORY_TYPES[indexPath.row]
                         let lastModified = Date()
-                        let image = UIImage()
-                        let inventory = Inventory(id: id, userid: userid, imageid: randomImageID, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: 0, bidWinner: "null")
+                        let imageurl = URL(string: "123")!
+                        let inventory = Inventory(id: id, userid: userid, imageid: randomImageID, imageurl: imageurl, name: name, type: type, description: description, lastModified: lastModified, bidStatus: 0, bidWinner: "null")
                         FirestoreServices.sharedInstance.createInventory(inventory: inventory, completion: { (error) in
                             if let error = error {
                                 self.indicator.stopAnimating()
@@ -241,15 +243,9 @@ class AddNewInventoryViewController: UIViewController {
     
     // MARK: -
     private func addImageToImageView() {
-        let image = currentInventory!.image
-        let size = CGSize(width: self.inventoryImageView.bounds.width, height: self.inventoryImageView.bounds.height)
-        let renderer = UIGraphicsImageRenderer(size: size)
-        let resizedImage = renderer.image { _ in
-            image.draw(in: CGRect(origin: .zero, size: size))
-        }
-        currentImage = resizedImage
-        self.inventoryImageView.backgroundColor = UIColor(patternImage: resizedImage)
-        self.selectPhotoIndicatorStackView.isHidden = true
+        
+        self.inventoryImage.isHidden = false
+        self.inventoryImage.sd_setImage(with: currentInventory!.imageurl, completed: nil)
         
     }
 

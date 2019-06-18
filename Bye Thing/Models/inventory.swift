@@ -14,7 +14,7 @@ class Inventory {
     var id: String
     var userid: String
     var imageid: String
-    var image: UIImage
+    var imageurl: URL
     var name: String
     var type: InventoryType
     var description: String
@@ -23,11 +23,11 @@ class Inventory {
     var bidWinner: String
     
     // MARK: - Init
-    init(id: String, userid: String, imageid: String, image: UIImage, name: String, type: InventoryType, description: String, lastModified: Date, bidStatus: Int, bidWinner: String) {
+    init(id: String, userid: String, imageid: String, imageurl: URL, name: String, type: InventoryType, description: String, lastModified: Date, bidStatus: Int, bidWinner: String) {
         self.id = id
         self.userid = userid
         self.imageid = imageid
-        self.image = image
+        self.imageurl = imageurl
         self.name = name
         self.type = type
         self.description = description

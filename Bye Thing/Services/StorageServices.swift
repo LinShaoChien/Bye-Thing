@@ -41,6 +41,17 @@ class StorageServices {
     }
     
     // MARK: -
+    func getDownloadURL(imageid: String, completion: @escaping (URL?, Error?) -> ()) {
+        storage.reference().child("images/" + imageid + ".jpeg").downloadURL { (url, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                completion(url, nil)
+            }
+        }
+    }
+    
+    // MARK: -
     func delete(imageID: String, completion: @escaping (Error?) -> ()) {
         let imageRef = storage.reference().child("images/" + imageID + ".jpeg")
         imageRef.delete { (error) in

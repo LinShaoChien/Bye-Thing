@@ -14,5 +14,6 @@ target 'Bye Thing' do
   pod 'Firebase/Firestore'
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Storage'
+  pod 'SDWebImage'
 
 end

@@ -231,12 +231,21 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLy-nx-pOR">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="300.33333333333331"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="yLy-nx-pOR" firstAttribute="leading" secondItem="fkS-HK-1K8" secondAttribute="leading" id="2Dd-j6-Lvc"/>
                                             <constraint firstItem="kbw-uw-NmU" firstAttribute="centerY" secondItem="fkS-HK-1K8" secondAttribute="centerY" id="7OX-zp-fCm"/>
+                                            <constraint firstAttribute="trailing" secondItem="yLy-nx-pOR" secondAttribute="trailing" id="83n-BD-tGw"/>
+                                            <constraint firstAttribute="bottom" secondItem="yLy-nx-pOR" secondAttribute="bottom" id="AeF-wf-x1h"/>
                                             <constraint firstAttribute="width" secondItem="fkS-HK-1K8" secondAttribute="height" multiplier="1:1" id="CkP-jE-GsP"/>
+                                            <constraint firstItem="yLy-nx-pOR" firstAttribute="centerY" secondItem="fkS-HK-1K8" secondAttribute="centerY" id="YM0-65-JTb"/>
                                             <constraint firstItem="kbw-uw-NmU" firstAttribute="centerX" secondItem="fkS-HK-1K8" secondAttribute="centerX" id="cip-tW-KSI"/>
+                                            <constraint firstItem="yLy-nx-pOR" firstAttribute="top" secondItem="fkS-HK-1K8" secondAttribute="top" id="qNk-qb-aTF"/>
+                                            <constraint firstItem="yLy-nx-pOR" firstAttribute="centerX" secondItem="fkS-HK-1K8" secondAttribute="centerX" id="tWV-4e-MN7"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="UDr-AR-KEP">
@@ -341,6 +350,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="inventoryDescriptionTextView" destination="eBy-Tr-59M" id="oLa-In-qFr"/>
+                        <outlet property="inventoryImage" destination="yLy-nx-pOR" id="CrI-Yu-i8N"/>
                         <outlet property="inventoryImageView" destination="fkS-HK-1K8" id="m4r-hw-9Xc"/>
                         <outlet property="inventoryNameTextField" destination="5Jo-Pc-98c" id="Y8f-J4-xiS"/>
                         <outlet property="inventoryTypeCollectionView" destination="JJu-Ce-upE" id="Hf6-cR-GEs"/>

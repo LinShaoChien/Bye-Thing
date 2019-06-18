@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class InventoryTableViewCell: UITableViewCell {
 
@@ -52,14 +53,8 @@ class InventoryTableViewCell: UITableViewCell {
         
         // Configure image
         itemImage.image = nil
-        let size = itemImage.bounds.size
-        let image = inventories[indexPath.row].image
-        let renderer = UIGraphicsImageRenderer(size: size)
-        let adjustedImage = renderer.image { _ in
-            image.draw(in: CGRect(origin: .zero, size: size))
-        }
-        self.itemImage.image = adjustedImage
-        
+        let url = inventories[indexPath.row].imageurl
+        itemImage.sd_setImage(with: url, completed: nil)
     }
 
 }

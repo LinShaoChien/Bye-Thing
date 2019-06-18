@@ -129,20 +129,37 @@ class FirestoreServices {
                         let bidStatus = data["bidStatus"] as! Int
                         let bidWinner = data["bidWinner"] as! String
                         
-                        StorageServices.sharedInstance.download(imageID: imageid, completion: { (image, error) in
+                        StorageServices.sharedInstance.getDownloadURL(imageid: imageid, completion: { (url, error) in
                             if let error = error {
                                 completion(nil, nil, error)
                             } else {
-                                if let image = image {
-                                    let inventory = Inventory(id: id, userid: userid, imageid: imageid, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: bidStatus, bidWinner: bidWinner)
+                                if let url = url {
+                                    let inventory = Inventory(id: id, userid: userid, imageid: imageid, imageurl: url, name: name, type: type, description: description, lastModified: lastModified, bidStatus: bidStatus, bidWinner: bidWinner)
                                     inventories.append(inventory)
-                                    inventories.sort(by: {$0.lastModified > $1.lastModified})
                                     if inventories.count == snapshot.documents.count {
+                                        inventories.sort(by: {$0.lastModified > $1.lastModified})
                                         completion(inventories, documents, nil)
                                     }
                                 }
                             }
                         })
+                        
+                        
+                        
+//                        StorageServices.sharedInstance.download(imageID: imageid, completion: { (image, error) in
+//                            if let error = error {
+//                                completion(nil, nil, error)
+//                            } else {
+//                                if let image = image {
+//                                    let inventory = Inventory(id: id, userid: userid, imageid: imageid, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: bidStatus, bidWinner: bidWinner)
+//                                    inventories.append(inventory)
+//                                    inventories.sort(by: {$0.lastModified > $1.lastModified})
+//                                    if inventories.count == snapshot.documents.count {
+//                                        completion(inventories, documents, nil)
+//                                    }
+//                                }
+//                            }
+//                        })
                     }
                 }
             }

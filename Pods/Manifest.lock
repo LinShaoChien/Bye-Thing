@@ -131,6 +131,9 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
+  - SDWebImage (5.0.3):
+    - SDWebImage/Core (= 5.0.3)
+  - SDWebImage/Core (5.0.3)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -141,6 +144,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - IQKeyboardManagerSwift
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -166,6 +170,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - SDWebImage
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -190,7 +195,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
 
-PODFILE CHECKSUM: 2b508c2c0b358642ebd95211055dec8fcd492664
+PODFILE CHECKSUM: 85f77c9b67f6173ef0ad48bc7903e6d15eec55c1
 
 COCOAPODS: 1.5.2
