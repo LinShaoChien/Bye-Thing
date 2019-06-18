@@ -11,8 +11,11 @@ import UIKit
 class InventoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var itemDetail: InventoryTableViewCellLabelsView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var biddingStatus: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     var item: Inventory!
     
     override func awakeFromNib() {
@@ -26,6 +29,14 @@ class InventoryTableViewCell: UITableViewCell {
     }
     
     func configureCell(inventories: [Inventory], indexPath: IndexPath) {
+        
+        if indexPath.row + 1 > inventories.count {
+            indicator.startAnimating()
+            itemName.text = ""
+            biddingStatus.text = ""
+            itemImage.image = nil
+            return
+        }
         
         // Configure labels
         itemName.text = inventories[indexPath.row].name

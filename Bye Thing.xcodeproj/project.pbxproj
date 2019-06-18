@@ -23,7 +23,6 @@
 		EF059757229C455B00B54552 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF059745229C455B00B54552 /* Montserrat-Medium.otf */; };
 		EF05975E229D05D300B54552 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975D229D05D300B54552 /* AuthButton.swift */; };
 		EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975F229D1C5700B54552 /* SigninViewController.swift */; };
-		EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF059761229D69BE00B54552 /* GoogleService-Info.plist */; };
 		EF126BFC22AA21D900AE12B9 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF126BFB22AA21D900AE12B9 /* StorageServices.swift */; };
 		EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */; };
 		EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890122AE6431009B7013 /* RoundedCornerView.swift */; };
@@ -37,8 +36,11 @@
 		EFA00EA422A3DEFD00B03A66 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA322A3DEFD00B03A66 /* LogOutViewController.swift */; };
 		EFA00EA622A434F300B03A66 /* InventoryDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */; };
 		EFA00EA822A43DC500B03A66 /* InventoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00EA722A43DC500B03A66 /* InventoryType.swift */; };
+		EFDCB11422B7B4FA0043C524 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDCB11322B7B4FA0043C524 /* Constants.swift */; };
 		EFE25E5D22ACDA33002BAB1B /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE25E5C22ACDA33002BAB1B /* Inventory.swift */; };
 		EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */; };
+		EFEA232E22B6CD52003E8A09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA232D22B6CD52003E8A09 /* GoogleService-Info.plist */; };
+		EFEA233022B74872003E8A09 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA232F22B74872003E8A09 /* LoadingTableViewCell.swift */; };
 		EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */; };
 		EFF0C13F22AFCA7A0094D4EC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */; };
 		EFF0C14622B3904C0094D4EC /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF0C14522B3904C0094D4EC /* UIAlertControllerExtension.swift */; };
@@ -65,7 +67,6 @@
 		EF059745229C455B00B54552 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.otf"; path = "../../../../../Downloads/montserrat/Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		EF05975D229D05D300B54552 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		EF05975F229D1C5700B54552 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
-		EF059761229D69BE00B54552 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF126BFB22AA21D900AE12B9 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCellLabelsView.swift; sourceTree = "<group>"; };
 		EF73890122AE6431009B7013 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
@@ -79,8 +80,11 @@
 		EFA00EA322A3DEFD00B03A66 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDescriptionTextView.swift; sourceTree = "<group>"; };
 		EFA00EA722A43DC500B03A66 /* InventoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryType.swift; sourceTree = "<group>"; };
+		EFDCB11322B7B4FA0043C524 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EFE25E5C22ACDA33002BAB1B /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		EFE25E5E22ACDA8F002BAB1B /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		EFEA232D22B6CD52003E8A09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFEA232F22B74872003E8A09 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		EFF0C13E22AFCA7A0094D4EC /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		EFF0C14522B3904C0094D4EC /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
@@ -144,8 +148,9 @@
 				EF059759229D04BB00B54552 /* Views */,
 				EF059758229D04B000B54552 /* Controllers */,
 				EFF0C14422B390200094D4EC /* Extensions */,
+				EFDCB11222B7B4D90043C524 /* Constants */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
-				EF059761229D69BE00B54552 /* GoogleService-Info.plist */,
+				EFEA232D22B6CD52003E8A09 /* GoogleService-Info.plist */,
 				EF059733229C453500B54552 /* Fonts */,
 			);
 			path = "Bye Thing";
@@ -248,6 +253,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		EFDCB11222B7B4D90043C524 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EFDCB11322B7B4FA0043C524 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		EFF0C13B22AFC3670094D4EC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +280,7 @@
 		EFF0C14322B2084D0094D4EC /* Discover Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EFEA232F22B74872003E8A09 /* LoadingTableViewCell.swift */,
 			);
 			path = "Discover Table View Cell";
 			sourceTree = "<group>";
@@ -340,9 +354,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF059762229D69BE00B54552 /* GoogleService-Info.plist in Resources */,
 				EFA00E9822A2E51800B03A66 /* Inventory.storyboard in Resources */,
 				EF059752229C455B00B54552 /* Montserrat-ExtraBold.otf in Resources */,
+				EFEA232E22B6CD52003E8A09 /* GoogleService-Info.plist in Resources */,
 				EFF0C13F22AFCA7A0094D4EC /* Discover.storyboard in Resources */,
 				EF05972C229C2A3F00B54552 /* LaunchScreen.storyboard in Resources */,
 				EF059756229C455B00B54552 /* Montserrat-Thin.otf in Resources */,
@@ -454,6 +468,8 @@
 				EFA00EA622A434F300B03A66 /* InventoryDescriptionTextView.swift in Sources */,
 				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
 				EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */,
+				EFEA233022B74872003E8A09 /* LoadingTableViewCell.swift in Sources */,
+				EFDCB11422B7B4FA0043C524 /* Constants.swift in Sources */,
 				EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */,
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,
 				EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */,

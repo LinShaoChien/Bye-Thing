@@ -80,14 +80,15 @@ class FirestoreServices {
     
     // MARK: - Get inventories
     
-    func getInventories(ofUser userid: String?, type: InventoryType?, name: String?, limit: Int, completion: @escaping ([Inventory]?, Error?) -> ()) {
+    func getInventories(ofUser userid: String?, type: InventoryType?, name: String?, limit: Int, after lastDocument: DocumentSnapshot?, completion: @escaping ([Inventory]?, [DocumentSnapshot]?, Error?) -> ()) {
         
         let limit = limit
+        var documents: [DocumentSnapshot] = []
         var inventories: [Inventory] = []
         
         // Create compound query
         
-        var query = db.collection("inventories").order(by: "lastModified", descending: false).limit(to: limit)
+        var query = db.collection("inventories").order(by: "lastModified", descending: true).limit(to: limit)
         if let userid = userid {
             query = query.whereField("userid", isEqualTo: userid)
         }
@@ -97,21 +98,25 @@ class FirestoreServices {
         if let name = name {
             query = query.whereField("name", isEqualTo: name)
         }
+        if let lastDocument = lastDocument {
+            query = query.start(afterDocument: lastDocument)
+        }
         
-        print("Getting Document")
         query.getDocuments { (snapshot, error) in
             if let error = error {
-                completion(nil, error)
+                completion(nil, nil, error)
             } else {
 
                 if let snapshot = snapshot {
                     
                     guard snapshot.count != 0 else {
-                        completion(inventories, nil)
+                        completion(inventories, documents, nil)
                         return
                     }
                     
                     for document in snapshot.documents {
+                        
+                        documents.append(document)
                         
                         let data = document.data()
                         let id = data["id"] as! String
@@ -126,14 +131,14 @@ class FirestoreServices {
                         
                         StorageServices.sharedInstance.download(imageID: imageid, completion: { (image, error) in
                             if let error = error {
-                                completion(nil, error)
+                                completion(nil, nil, error)
                             } else {
                                 if let image = image {
                                     let inventory = Inventory(id: id, userid: userid, imageid: imageid, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: bidStatus, bidWinner: bidWinner)
                                     inventories.append(inventory)
                                     inventories.sort(by: {$0.lastModified > $1.lastModified})
                                     if inventories.count == snapshot.documents.count {
-                                        completion(inventories, nil)
+                                        completion(inventories, documents, nil)
                                     }
                                 }
                             }

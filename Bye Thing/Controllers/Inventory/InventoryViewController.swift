@@ -13,7 +13,8 @@ class InventoryViewController: UIViewController {
 
     // Subviews
     @IBOutlet weak var inventoryTableView: UITableView!
-
+    @IBOutlet weak var emptyInventoryImageView: UIImageView!
+    @IBOutlet weak var promptLabel: UILabel!
     var indicator: UIActivityIndicatorView!
     
     // Variables
@@ -101,8 +102,8 @@ class InventoryViewController: UIViewController {
         
         let uid = Auth.auth().currentUser!.uid
         
-        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50) { (inventories, error) in
-            print(error?.localizedDescription)
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50, after: nil) { (inventories, documents,  error) in
+            
             if let error = error {
                 print(error.localizedDescription)
                 let alert = UIAlertController.errorAlert(error: error)
@@ -111,10 +112,16 @@ class InventoryViewController: UIViewController {
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
             } else {
                 if let inventories = inventories {
+                    print(inventories.count)
                     self.inventories = inventories
                     self.inventoryTableView.reloadData()
                     self.indicator.stopAnimating()
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    if inventories.count == 0 {
+                        self.emptyInventoryImageView.isHidden = false
+                        self.promptLabel.isHidden = false
+                        // self.inventoryTableView.isHidden = true
+                    }
                 }
             }
         }
@@ -127,7 +134,7 @@ class InventoryViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         let uid = Auth.auth().currentUser!.uid
-        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50) { (inventories, error) in
+        FirestoreServices.sharedInstance.getInventories(ofUser: uid, type: nil, name: nil, limit: 50, after: nil) { (inventories, documents, error) in
             if let error = error {
                 let alert = UIAlertController.errorAlert(error: error)
                 self.present(alert, animated: true, completion: nil)
@@ -137,6 +144,12 @@ class InventoryViewController: UIViewController {
                     self.inventoryTableView.reloadData()
                     self.indicator.stopAnimating()
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    if inventories.count == 0 {
+                        print("No inventories!!!!!")
+                        self.emptyInventoryImageView.isHidden = false
+                        self.promptLabel.isHidden = false
+                        self.inventoryTableView.isHidden = true
+                    }
                 }
             }
         }

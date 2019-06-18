@@ -37,13 +37,6 @@ class AddNewInventoryViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
-    let inventoryTypes: [InventoryType] = [
-        InventoryType(name: "Furniture"),
-        InventoryType(name: "Electronics"),
-        InventoryType(name: "Clothing"),
-        InventoryType(name: "Shoes")
-    ]
-    
     // MARK: - View controller life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +55,7 @@ class AddNewInventoryViewController: UIViewController {
             
             addImageToImageView()
             
-            if let itemNumber = inventoryTypes.firstIndex(where: {$0.name == currentInventory!.type.name}) {
+            if let itemNumber = INVENTORY_TYPES.firstIndex(where: {$0.name == currentInventory!.type.name}) {
                 let indexPath = IndexPath(row: itemNumber, section: 0)
                 self.currentSelectedCellIndexPath = indexPath
                 inventoryTypeCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
@@ -139,7 +132,7 @@ class AddNewInventoryViewController: UIViewController {
                         if success {
                             
                             // Finally update inventory
-                            let itemType = self.inventoryTypes[indexPath.row].name
+                            let itemType = INVENTORY_TYPES[indexPath.row].name
                             let date = Date()
                             
                             FirestoreServices.sharedInstance.updateInventory(uid: userid, id: self.currentInventory!.id, imageID: randomImageID, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
@@ -164,7 +157,7 @@ class AddNewInventoryViewController: UIViewController {
                 } else {
                     // User did not change inventory image
                     // Update inventory
-                    let itemType = self.inventoryTypes[indexPath.row].name
+                    let itemType = INVENTORY_TYPES[indexPath.row].name
                     let date = Date()
                     
                     FirestoreServices.sharedInstance.updateInventory(uid: userid, id: self.currentInventory!.id, imageID: nil, itemName: name, itemType: itemType, itemDescription: description, lastModifyTime: date, completion: { (success, error) in
@@ -190,7 +183,7 @@ class AddNewInventoryViewController: UIViewController {
                         
                         // Finally create an inventory in the firebase db
                         let id = UUID().uuidString
-                        let type = self.inventoryTypes[indexPath.row]
+                        let type = INVENTORY_TYPES[indexPath.row]
                         let lastModified = Date()
                         let image = UIImage()
                         let inventory = Inventory(id: id, userid: userid, imageid: randomImageID, image: image, name: name, type: type, description: description, lastModified: lastModified, bidStatus: 0, bidWinner: "null")
@@ -294,12 +287,12 @@ class AddNewInventoryViewController: UIViewController {
 extension AddNewInventoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return inventoryTypes.count
+        return INVENTORY_TYPES.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "inventoryTypeCell", for: indexPath) as! InventoryTypeCollectionViewCell
-        let typeName = inventoryTypes[indexPath.item].name
+        let typeName = INVENTORY_TYPES[indexPath.item].name
         cell.configureCell(typeName: typeName)
         return cell
     }
