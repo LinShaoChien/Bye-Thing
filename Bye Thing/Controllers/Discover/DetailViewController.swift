@@ -36,10 +36,16 @@ class DetailViewController: UIViewController {
     func setupItemBar() {
         
         navigationItem.title = inventoryName
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1),
-            NSAttributedString.Key.font: UIFont(name: "Montserrat-Regular", size: 18)!
-        ]
+        
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-SemiBold", size: 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1)
+        ], for: .normal)
+        
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-SemiBold", size: 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1)
+            ], for: .selected)
     }
     
     // MARK: -
@@ -47,5 +53,7 @@ class DetailViewController: UIViewController {
         imageView.sd_setImage(with: inventoryImageURL, completed: nil)
         descriptionTextView.text = inventoryDescription
     }
+    
+    
     
 }
