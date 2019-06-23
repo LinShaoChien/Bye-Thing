@@ -28,6 +28,7 @@
 		EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890122AE6431009B7013 /* RoundedCornerView.swift */; };
 		EF73890622AE6584009B7013 /* InventoryTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */; };
 		EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */; };
+		EF771D8F22BCB16E00879D1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF771D8E22BCB16E00879D1C /* DetailViewController.swift */; };
 		EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */; };
 		EFA00E9822A2E51800B03A66 /* Inventory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA00E9722A2E51800B03A66 /* Inventory.storyboard */; };
 		EFA00E9E22A2EB0400B03A66 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA00E9D22A2EB0400B03A66 /* assets.xcassets */; };
@@ -72,6 +73,7 @@
 		EF73890122AE6431009B7013 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryTypeCollectionViewCell.swift; path = ../../../../../.Trash/InventoryTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableVIewCellImageView.swift; sourceTree = "<group>"; };
+		EF771D8E22BCB16E00879D1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EF7BFED022B8B02A0096A4D2 /* Bye Thing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bye Thing-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
 		EFA00E9722A2E51800B03A66 /* Inventory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inventory.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		EF059715229C2A3E00B54552 = {
 			isa = PBXGroup;
 			children = (
+				EF059763229D6C9600B54552 /* Services */,
 				EF059720229C2A3E00B54552 /* Bye Thing */,
 				EFA00E9D22A2EB0400B03A66 /* assets.xcassets */,
 				EF05971F229C2A3E00B54552 /* Products */,
@@ -144,16 +147,15 @@
 			isa = PBXGroup;
 			children = (
 				EFF0C14022B201B00094D4EC /* App Delegates */,
-				EF059763229D6C9600B54552 /* Services */,
 				EFA00E9C22A2E58700B03A66 /* Storyboards */,
 				EF05975A229D04C100B54552 /* Models */,
 				EF059759229D04BB00B54552 /* Views */,
 				EF059758229D04B000B54552 /* Controllers */,
 				EFF0C14422B390200094D4EC /* Extensions */,
+				EF059733229C453500B54552 /* Fonts */,
 				EFDCB11222B7B4D90043C524 /* Constants */,
 				EF05972D229C2A3F00B54552 /* Info.plist */,
 				EFEA232D22B6CD52003E8A09 /* GoogleService-Info.plist */,
-				EF059733229C453500B54552 /* Fonts */,
 			);
 			path = "Bye Thing";
 			sourceTree = "<group>";
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */,
+				EF771D8E22BCB16E00879D1C /* DetailViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
 				EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */,
 				EFEA233022B74872003E8A09 /* LoadingTableViewCell.swift in Sources */,
+				EF771D8F22BCB16E00879D1C /* DetailViewController.swift in Sources */,
 				EFDCB11422B7B4FA0043C524 /* Constants.swift in Sources */,
 				EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */,
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,

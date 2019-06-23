@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,6 +16,9 @@
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Discover-->
@@ -23,18 +26,18 @@
             <objects>
                 <viewController storyboardIdentifier="DiscoverViewController" id="Df3-Ig-UOt" customClass="DiscoverViewController" customModule="Bye_Thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cvT-Zt-zNd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-VP-az5">
-                                <rect key="frame" x="20" y="198" width="374" height="615"/>
+                                <rect key="frame" x="20" y="174" width="335" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="inventoryCell" rowHeight="90" id="SIR-AP-sbO" customClass="InventoryTableViewCell" customModule="Bye_Thing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SIR-AP-sbO" id="zO0-lc-IKg">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-eM-4cy">
@@ -110,7 +113,7 @@
                                 </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Yp-CS-mpD">
-                                <rect key="frame" x="20" y="140" width="374" height="50"/>
+                                <rect key="frame" x="20" y="116" width="335" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VHx-f6-GVH"/>
@@ -152,7 +155,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H7-nC-0ZY">
-                                <rect key="frame" x="328" y="96" width="66" height="32"/>
+                                <rect key="frame" x="295" y="72" width="60" height="32"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -162,7 +165,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-Fn-uPv">
-                                <rect key="frame" x="20" y="96" width="298" height="30"/>
+                                <rect key="frame" x="20" y="72" width="265" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -195,11 +198,79 @@
                         <outlet property="inventoryTypeCollectionViewFlowLayout" destination="EEK-WQ-nr0" id="uKs-nf-TkE"/>
                         <outlet property="searchTextField" destination="wbL-Fn-uPv" id="1Zj-7j-rAf"/>
                         <outlet property="tableView" destination="8M0-VP-az5" id="V5s-so-ntp"/>
+                        <segue destination="78g-9j-DcU" kind="show" identifier="toDetail" id="Mwh-kv-AxH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAb-Jo-DER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="89.505247376311857"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="4Ck-Cf-zqM">
+            <objects>
+                <viewController id="78g-9j-DcU" customClass="DetailViewController" customModule="Bye_Thing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3hb-SL-VDD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="MgR-DS-PQY">
+                                <rect key="frame" x="51.5" y="72" width="272" height="494"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0et-IT-a72">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="272"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0et-IT-a72" secondAttribute="height" multiplier="1:1" id="2F3-lt-tFw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l77-no-ght" customClass="InventoryDescriptionTextView" customModule="Bye_Thing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="286" width="272" height="144"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="144" id="cru-n4-D6d"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-ExtraLight" family="Montserrat" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syA-0r-4l0" customClass="AuthButton" customModule="Bye_Thing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="444" width="272" height="50"/>
+                                        <color key="backgroundColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                        <state key="normal" title="Go Bid">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBidPressed:" destination="78g-9j-DcU" eventType="touchUpInside" id="MOU-Ic-nEw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0et-IT-a72" firstAttribute="width" secondItem="MgR-DS-PQY" secondAttribute="width" id="Iwo-0K-CcD"/>
+                                    <constraint firstItem="l77-no-ght" firstAttribute="width" secondItem="MgR-DS-PQY" secondAttribute="width" id="Ma0-aW-bTa"/>
+                                    <constraint firstItem="syA-0r-4l0" firstAttribute="width" secondItem="MgR-DS-PQY" secondAttribute="width" id="jNM-Fb-Huw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MgR-DS-PQY" firstAttribute="width" secondItem="3hb-SL-VDD" secondAttribute="width" multiplier="272/375" id="17z-pn-FCz"/>
+                            <constraint firstItem="MgR-DS-PQY" firstAttribute="centerX" secondItem="3hb-SL-VDD" secondAttribute="centerX" id="Mbw-o5-vcj"/>
+                            <constraint firstItem="MgR-DS-PQY" firstAttribute="top" secondItem="89x-NC-sFY" secondAttribute="top" constant="8" id="pCE-8U-QFH"/>
+                            <constraint firstItem="syA-0r-4l0" firstAttribute="height" secondItem="3hb-SL-VDD" secondAttribute="height" multiplier="50/667" id="wJs-vd-8nZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="89x-NC-sFY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="MVI-J9-5N4">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="TZd-tN-bkb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="l77-no-ght" id="EyB-Mn-F2W"/>
+                        <outlet property="imageView" destination="0et-IT-a72" id="8cs-9D-sBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKH-3V-kRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="89"/>
         </scene>
         <!--Discover-->
         <scene sceneID="B5O-TP-xBv">
@@ -209,7 +280,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fIE-7s-dci">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -27,9 +27,14 @@ class DiscoverViewController: UIViewController {
     var documents: [DocumentSnapshot] = []
     var currentSelectedCellIndexPath: IndexPath? = nil
     
-    //MARK: - Flags
+    // MARK: - Flags
     var isPrefetching = false
     var isAllDataFetched = false
+    
+    // MARK: - Segues
+    enum Segue {
+        static let toDetail = "toDetail"
+    }
     
     // MARK: - View Controller Life Cycles
     override func viewDidLoad() {
@@ -41,11 +46,34 @@ class DiscoverViewController: UIViewController {
         tableView.prefetchDataSource = self
         configureActivityIndicator()
         getInventories()
+        setupNavigationBar()
     }
     
     // MARK: - UIActions
     @IBAction func searchPressed(_ sender: Any) {
         getInventories()
+    }
+    
+    // MARK: -
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.toDetail {
+            let destination = segue.destination as! DetailViewController
+            let indexPath = sender as! IndexPath
+            let inventory = inventories[indexPath.row]
+            destination.inventoryName = inventory.name
+            destination.inventoryImageURL = inventory.imageurl
+            destination.inventoryDescription = inventory.description
+        }
+    }
+    
+    // MARK: -
+    func setupNavigationBar() {
+        navigationItem.title = "Discover"
+        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2979793549, blue: 0, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1),
+            NSAttributedString.Key.font: UIFont(name: "Montserrat-Regular", size: 18)!
+        ]
     }
     
     // MARK: - Configure Acitivity Indicator
@@ -102,6 +130,8 @@ class DiscoverViewController: UIViewController {
                     self.inventories = inventories
                     self.documents = documents
                     self.tableView.reloadData()
+                    
+                    guard inventories.count != 0 else { return }
                     self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                 }
             }
@@ -163,6 +193,11 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(inventories: inventories, indexPath: indexPath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: Segue.toDetail, sender: indexPath)
+    }
+
 }
 
 extension DiscoverViewController: UITableViewDataSourcePrefetching {

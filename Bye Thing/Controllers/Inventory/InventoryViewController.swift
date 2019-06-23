@@ -45,11 +45,8 @@ class InventoryViewController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "Montserrat-Regular", size: 18)!
         ]
         navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0, green: 0.2979793549, blue: 0, alpha: 1)
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(displayP3Red: 5/255, green: 61/255, blue: 0/255, alpha: 1),
-            NSAttributedString.Key.font: UIFont(name: "Montserrat-SemiBold", size: 34)!
-        ]
+        
+        
     }
     
     deinit {
