@@ -24,9 +24,9 @@
 		EF05975E229D05D300B54552 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975D229D05D300B54552 /* AuthButton.swift */; };
 		EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05975F229D1C5700B54552 /* SigninViewController.swift */; };
 		EF126BFC22AA21D900AE12B9 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF126BFB22AA21D900AE12B9 /* StorageServices.swift */; };
+		EF33122922C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF33122822C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift */; };
 		EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */; };
 		EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890122AE6431009B7013 /* RoundedCornerView.swift */; };
-		EF73890622AE6584009B7013 /* InventoryTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */; };
 		EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */; };
 		EF771D8F22BCB16E00879D1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF771D8E22BCB16E00879D1C /* DetailViewController.swift */; };
 		EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA00E9522A28E3300B03A66 /* FirestoreServices.swift */; };
@@ -69,9 +69,9 @@
 		EF05975D229D05D300B54552 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		EF05975F229D1C5700B54552 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		EF126BFB22AA21D900AE12B9 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
+		EF33122822C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCellLabelsView.swift; sourceTree = "<group>"; };
 		EF73890122AE6431009B7013 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
-		EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryTypeCollectionViewCell.swift; path = ../../../../../.Trash/InventoryTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableVIewCellImageView.swift; sourceTree = "<group>"; };
 		EF771D8E22BCB16E00879D1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EF7BFED022B8B02A0096A4D2 /* Bye Thing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bye Thing-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				EF05975D229D05D300B54552 /* AuthButton.swift */,
 				EFA00EA522A434F300B03A66 /* InventoryDescriptionTextView.swift */,
 				EF73890122AE6431009B7013 /* RoundedCornerView.swift */,
-				EF73890522AE6584009B7013 /* InventoryTypeCollectionViewCell.swift */,
+				EF33122822C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift */,
 				EF73890922AE6653009B7013 /* Inventory Table View Cell */,
 				EFF0C14322B2084D0094D4EC /* Discover Table View Cell */,
 			);
@@ -467,12 +467,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */,
+				EF33122922C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift in Sources */,
 				EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */,
 				EFA00EA022A2ECDA00B03A66 /* InventoryViewController.swift in Sources */,
 				EFA00EA822A43DC500B03A66 /* InventoryType.swift in Sources */,
 				EF059724229C2A3E00B54552 /* AuthViewController.swift in Sources */,
 				EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */,
-				EF73890622AE6584009B7013 /* InventoryTypeCollectionViewCell.swift in Sources */,
 				EFA00EA622A434F300B03A66 /* InventoryDescriptionTextView.swift in Sources */,
 				EF05975E229D05D300B54552 /* AuthButton.swift in Sources */,
 				EFF0C13D22AFC38C0094D4EC /* DiscoverViewController.swift in Sources */,
