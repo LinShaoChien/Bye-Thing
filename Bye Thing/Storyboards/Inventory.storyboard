@@ -54,16 +54,16 @@
                                                             <rect key="frame" x="101" y="0.0" width="273" height="81"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5YI-DO-rPu">
-                                                                    <rect key="frame" x="15" y="16.000000000000004" width="171.66666666666666" height="49.333333333333343"/>
+                                                                    <rect key="frame" x="15" y="16.333333333333332" width="151.66666666666666" height="48.333333333333343"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Item Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fil-qe-Fj0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="22"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="22"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Item Bidding Condition)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dh-Ws-tAO">
-                                                                            <rect key="frame" x="0.0" y="32" width="171.66666666666666" height="17.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="32" width="151.66666666666666" height="16.333333333333329"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-ExtraLight" family="Montserrat" pointSize="14"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -218,13 +218,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kbw-uw-NmU">
-                                                <rect key="frame" x="75.333333333333329" y="113.66666666666666" width="149.33333333333337" height="72.666666666666657"/>
+                                                <rect key="frame" x="83.666666666666671" y="114" width="132.66666666666663" height="72"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-MF-Roh">
-                                                        <rect key="frame" x="49.666666666666657" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="41.333333333333343" y="0.0" width="50" height="50"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select/take photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="SJV-kV-iaZ">
-                                                        <rect key="frame" x="0.0" y="57.999999999999993" width="149.33333333333334" height="14.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="58" width="132.66666666666666" height="14"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                         <color key="textColor" red="0.1764705882" green="0.51372549020000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -252,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="310.33333333333331" width="300" height="25"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Jo-Pc-98c">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-ExtraLight" family="Montserrat" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>

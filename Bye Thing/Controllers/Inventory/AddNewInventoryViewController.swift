@@ -89,7 +89,7 @@ class AddNewInventoryViewController: UIViewController {
             
             // Check if the user did select/take an image
             guard let imageData = currentImage?.jpegData(compressionQuality: 1) else {
-                let alert = UIAlertController(title: "Please select an image", message: nil, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Please Select an Image", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -251,6 +251,7 @@ class AddNewInventoryViewController: UIViewController {
         
         self.inventoryImage.isHidden = false
         self.inventoryImage.sd_setImage(with: currentInventory!.imageurl, completed: nil)
+        self.currentImage = inventoryImage.image
         
     }
 

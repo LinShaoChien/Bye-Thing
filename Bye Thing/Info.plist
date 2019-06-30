@@ -56,15 +56,10 @@
 	<string>This app wants to access your photo library</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Montserrat-Black.otf</string>
-		<string>Montserrat-Bold.otf</string>
-		<string>Montserrat-ExtraBold.otf</string>
-		<string>Montserrat-ExtraLight.otf</string>
-		<string>Montserrat-Light.otf</string>
-		<string>Montserrat-Medium.otf</string>
-		<string>Montserrat-Regular.otf</string>
-		<string>Montserrat-SemiBold.otf</string>
-		<string>Montserrat-Thin.otf</string>
+		<string>Monsterrat-Regular.otf</string>
+		<string>Monsterrat-SemiBold.otf</string>
+		<string>Monsterrat-Thin.otf</string>
+		<string>Monsterrat-ExtraLight.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
