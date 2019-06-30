@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>53438181375-7ngmadqr6phfankf81192n57vrhok9bb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.53438181375-7ngmadqr6phfankf81192n57vrhok9bb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAuK1JsAOyZaXrw8tggzACbpuCRCtik_UI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>53438181375</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.l.shaochien.Bye-Thing</string>
+	<key>PROJECT_ID</key>
+	<string>bye-thing</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bye-thing.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:53438181375:ios:910c63fa0e3697cf</string>
+	<key>DATABASE_URL</key>
+	<string>https://bye-thing.firebaseio.com</string>
+</dict>
+</plist>
