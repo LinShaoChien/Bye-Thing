@@ -147,6 +147,10 @@ class InventoryViewController: UIViewController {
                         self.emptyInventoryImageView.isHidden = false
                         self.promptLabel.isHidden = false
                         self.inventoryTableView.isHidden = true
+                    } else {
+                        self.emptyInventoryImageView.isHidden = true
+                        self.promptLabel.isHidden = true
+                        self.inventoryTableView.isHidden = false
                     }
                 }
             }

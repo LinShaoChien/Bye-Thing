@@ -14,17 +14,20 @@ import FBSDKCoreKit
 
 class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
+    // MARK: - Subviews
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var indicator: UIActivityIndicatorView!
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    // Segue
+    // MARK: - Segues
     enum Segue {
         static let signin = "toSignin"
         static let inventory = "toInventory"
     }
     
+    // MARK: - View controller life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTapGestureRecognizer()
@@ -34,6 +37,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         if AccessToken.isCurrentAccessTokenActive {
             print("Already sign in")
         }
+        addActivityIndicator()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +45,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 self.performSegue(withIdentifier: Segue.inventory, sender: nil)
+                self.indicator.stopAnimating()
             }
             
         }
@@ -50,7 +55,28 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handle!)
     }
+    
+    // MARK: - Create and add activity indicator to view
+    func addActivityIndicator() {
+        
+        // Configure indicator
+        indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = UIColor.lightGray
+        indicator.hidesWhenStopped = true
+        view.addSubview(indicator)
+        
+        // Configure indicator auto layout
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        let centerXConstraint = indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let centerYConstraint = indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        NSLayoutConstraint.activate([
+            centerXConstraint,
+            centerYConstraint
+            ])
+        
+    }
 
+    // MARK: -
     @IBAction func signUpPressed(_ sender: Any) {
         createUserWithEmailAndPassword()
     }
@@ -157,6 +183,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
             return
         }
         
+        indicator.startAnimating()
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             guard error == nil else {
                 
@@ -183,8 +210,10 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
                     alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 default:
+                    self.indicator.startAnimating()
                     return
                 }
+                self.indicator.stopAnimating()
                 return
             }
             
@@ -200,6 +229,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
                     let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    self.indicator.stopAnimating()
                 }
             })
             

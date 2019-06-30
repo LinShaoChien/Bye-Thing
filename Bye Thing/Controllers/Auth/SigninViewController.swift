@@ -13,11 +13,11 @@ class SigninViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addActivityIndicator()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +32,26 @@ class SigninViewController: UIViewController {
     @IBAction func dismissButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         emailTextField.endEditing(true)
+    }
+    
+    // MARK: - Create and add activity indicator to view
+    func addActivityIndicator() {
+        
+        // Configure indicator
+        indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = UIColor.lightGray
+        indicator.hidesWhenStopped = true
+        view.addSubview(indicator)
+        
+        // Configure indicator auto layout
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        let centerXConstraint = indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let centerYConstraint = indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        NSLayoutConstraint.activate([
+            centerXConstraint,
+            centerYConstraint
+            ])
+        
     }
     
     func signinWithEmailAndPassword() {
@@ -50,6 +70,7 @@ class SigninViewController: UIViewController {
             return
         }
         
+        indicator.startAnimating()
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
                 switch (error as NSError).code {
@@ -72,8 +93,10 @@ class SigninViewController: UIViewController {
                     alert.addAction(alertAction)
                     self.present(alert, animated: true, completion: nil)
                 }
+                self.indicator.stopAnimating()
                 return
             }
+            self.indicator.stopAnimating()
             self.dismiss(animated: true, completion: nil)
         }
     }

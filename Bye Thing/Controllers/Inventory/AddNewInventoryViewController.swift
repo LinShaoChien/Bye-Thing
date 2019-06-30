@@ -328,9 +328,12 @@ extension AddNewInventoryViewController: UIImagePickerControllerDelegate, UINavi
         if isEditMode {
             self.didChangeInventoryImageInEditMode = true
             self.inventoryImage.image = resizedImage
+            self.inventoryImage.isHidden = false
         } else {
             self.inventoryImage.image = resizedImage
+            self.inventoryImage.isHidden = false
             self.selectPhotoIndicatorStackView.isHidden = true
+            
         }
         
     }
