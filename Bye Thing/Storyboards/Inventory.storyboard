@@ -54,16 +54,16 @@
                                                             <rect key="frame" x="101" y="0.0" width="273" height="81"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5YI-DO-rPu">
-                                                                    <rect key="frame" x="15" y="16.333333333333332" width="151.66666666666666" height="48.333333333333343"/>
+                                                                    <rect key="frame" x="15" y="16.000000000000004" width="171.66666666666666" height="49.333333333333343"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Item Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fil-qe-Fj0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="22"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="22"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Item Bidding Condition)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dh-Ws-tAO">
-                                                                            <rect key="frame" x="0.0" y="32" width="151.66666666666666" height="16.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="32" width="171.66666666666666" height="17.333333333333329"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-ExtraLight" family="Montserrat" pointSize="14"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aTW-gz-CIX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="VuD-zI-rcr"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="user_unselected" selectedImage="user_selected" id="VuD-zI-rcr"/>
                     <connections>
                         <outlet property="emailLabel" destination="HGU-74-eUB" id="Ekh-Rt-O9u"/>
                         <outlet property="searchDisplayController" destination="jpI-SQ-asL" id="IoU-DP-u1e"/>
@@ -252,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="310.33333333333331" width="300" height="25"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Jo-Pc-98c">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="18"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-ExtraLight" family="Montserrat" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
@@ -421,5 +421,7 @@
         <image name="empty_inventory" width="150" height="150"/>
         <image name="inventory_selected" width="30" height="30"/>
         <image name="inventory_unselected" width="30" height="30"/>
+        <image name="user_selected" width="30" height="30"/>
+        <image name="user_unselected" width="30.333333969116211" height="30"/>
     </resources>
 </document>
