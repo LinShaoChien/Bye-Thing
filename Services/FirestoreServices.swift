@@ -161,4 +161,63 @@ class FirestoreServices {
             }
         }
     }
+    
+    // MARK: - Create bid
+    func createBid(inventoryid: String, email: String, price: Int, completion: @escaping (Error?) -> ()) {
+        let date = Date()
+        db.collection("bids").addDocument(data: [
+            "inventoryid": inventoryid,
+            "email": email,
+            "price": price,
+            "time": date
+        ]) { (error) in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    // MARK: -
+    func getBids(ofInventory inventoryid: String, completion: @escaping ([DocumentSnapshot]?, Error?) -> ()) {
+        
+        var documents = [DocumentSnapshot]()
+        print(inventoryid)
+        let query = db.collection("bids").whereField("inventoryid", isEqualTo: inventoryid)
+        
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let snapshot = snapshot {
+                    print(snapshot.documents.count)
+                    for document in snapshot.documents {
+                        print("append")
+                        documents.append(document)
+                        if documents.count == snapshot.documents.count {
+                            completion(documents, nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: -
+    func getUserEmail(with userid: String, completion: @escaping (Error?, String?) -> ()) {
+        let document = db.collection("users").document(userid)
+        document.getDocument { (snapshot, error) in
+            if let error = error {
+                completion(error, nil)
+            } else {
+                if let snapshot = snapshot {
+                    if let data = snapshot.data() {
+                        let userEmail = data["email"] as! String
+                        completion(nil, userEmail)
+                    }
+                }
+            }
+        }
+    }
 }

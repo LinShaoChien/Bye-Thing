@@ -63,6 +63,7 @@ class DiscoverViewController: UIViewController {
             destination.inventoryName = inventory.name
             destination.inventoryImageURL = inventory.imageurl
             destination.inventoryDescription = inventory.description
+            destination.inventoryID = inventory.id
         }
     }
     
@@ -207,7 +208,6 @@ extension DiscoverViewController: UITableViewDataSourcePrefetching {
         if isAllDataFetched == false {
             prefetch(indexPaths: indexPaths)
         }
-        
     }
     
 }

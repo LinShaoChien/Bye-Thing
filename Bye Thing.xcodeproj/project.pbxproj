@@ -20,6 +20,8 @@
 		EF33123D22C91D6F000EA3D6 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF33123922C91D6F000EA3D6 /* Montserrat-Thin.otf */; };
 		EF33123E22C91D6F000EA3D6 /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF33123A22C91D6F000EA3D6 /* Montserrat-ExtraLight.otf */; };
 		EF33123F22C91D6F000EA3D6 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF33123B22C91D6F000EA3D6 /* Montserrat-SemiBold.otf */; };
+		EF65745122DA0A6C0056F9BE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65745022DA0A6C0056F9BE /* HistoryViewController.swift */; };
+		EF65745422DA0AFC0056F9BE /* BidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65745322DA0AFC0056F9BE /* BidTableViewCell.swift */; };
 		EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */; };
 		EF73890222AE6431009B7013 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890122AE6431009B7013 /* RoundedCornerView.swift */; };
 		EF73890822AE6642009B7013 /* InventoryTableVIewCellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */; };
@@ -60,6 +62,8 @@
 		EF33123922C91D6F000EA3D6 /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
 		EF33123A22C91D6F000EA3D6 /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
 		EF33123B22C91D6F000EA3D6 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		EF65745022DA0A6C0056F9BE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		EF65745322DA0AFC0056F9BE /* BidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidTableViewCell.swift; sourceTree = "<group>"; };
 		EF7388FF22AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCellLabelsView.swift; sourceTree = "<group>"; };
 		EF73890122AE6431009B7013 /* RoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		EF73890722AE6642009B7013 /* InventoryTableVIewCellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableVIewCellImageView.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				EF33122822C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift */,
 				EF73890922AE6653009B7013 /* Inventory Table View Cell */,
 				EFF0C14322B2084D0094D4EC /* Discover Table View Cell */,
+				EF65745222DA0ACF0056F9BE /* Bid Table View Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +205,14 @@
 				EF126BFB22AA21D900AE12B9 /* StorageServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EF65745222DA0ACF0056F9BE /* Bid Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF65745322DA0AFC0056F9BE /* BidTableViewCell.swift */,
+			);
+			path = "Bid Table View Cell";
 			sourceTree = "<group>";
 		};
 		EF73890922AE6653009B7013 /* Inventory Table View Cell */ = {
@@ -255,6 +268,7 @@
 			children = (
 				EFF0C13C22AFC38C0094D4EC /* DiscoverViewController.swift */,
 				EF771D8E22BCB16E00879D1C /* DetailViewController.swift */,
+				EF65745022DA0A6C0056F9BE /* HistoryViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -447,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF73890022AE63A3009B7013 /* InventoryTableViewCellLabelsView.swift in Sources */,
+				EF65745122DA0A6C0056F9BE /* HistoryViewController.swift in Sources */,
 				EF33122922C913BE000EA3D6 /* InventoryTypeCollectionViewCell.swift in Sources */,
 				EF059760229D1C5700B54552 /* SigninViewController.swift in Sources */,
 				EFA00EA022A2ECDA00B03A66 /* InventoryViewController.swift in Sources */,
@@ -463,6 +478,7 @@
 				EF059722229C2A3E00B54552 /* AppDelegate.swift in Sources */,
 				EFE25E5F22ACDA8F002BAB1B /* InventoryTableViewCell.swift in Sources */,
 				EFF0C14622B3904C0094D4EC /* UIAlertControllerExtension.swift in Sources */,
+				EF65745422DA0AFC0056F9BE /* BidTableViewCell.swift in Sources */,
 				EFA00EA222A2ED0800B03A66 /* AddNewInventoryViewController.swift in Sources */,
 				EFA00EA422A3DEFD00B03A66 /* LogOutViewController.swift in Sources */,
 				EFA00E9622A28E3300B03A66 /* FirestoreServices.swift in Sources */,

@@ -261,7 +261,12 @@
                         <viewLayoutGuide key="safeArea" id="89x-NC-sFY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="MVI-J9-5N4">
-                        <barButtonItem key="rightBarButtonItem" title="History" id="TZd-tN-bkb"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="hIH-aS-HU3"/>
+                        <barButtonItem key="rightBarButtonItem" title="History" id="TZd-tN-bkb">
+                            <connections>
+                                <segue destination="9ec-IG-PZc" kind="show" identifier="toHistory" id="sW7-nE-64m"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="l77-no-ght" id="EyB-Mn-F2W"/>
@@ -271,6 +276,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKH-3V-kRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1980" y="89"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="LKs-Ye-pEO">
+            <objects>
+                <viewController id="9ec-IG-PZc" customClass="HistoryViewController" customModule="Bye_Thing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="elf-fJ-J3X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kj1-D7-EDv">
+                                <rect key="frame" x="37.5" y="64" width="300" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bidTableViewCell" rowHeight="80" id="uSF-nT-zDE" customClass="BidTableViewCell" customModule="Bye_Thing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uSF-nT-zDE" id="DU9-6x-Ee2">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(email) bid at (price)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfA-h1-qxy">
+                                                    <rect key="frame" x="0.0" y="45" width="131.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="YYYY/MM/DD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1su-cw-Qab">
+                                                    <rect key="frame" x="0.0" y="16" width="105.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ZfA-h1-qxy" secondAttribute="bottom" constant="17.5" id="2bY-Nz-u22"/>
+                                                <constraint firstItem="ZfA-h1-qxy" firstAttribute="top" secondItem="1su-cw-Qab" secondAttribute="bottom" constant="8" id="LRu-dd-pp1"/>
+                                                <constraint firstItem="1su-cw-Qab" firstAttribute="top" secondItem="DU9-6x-Ee2" secondAttribute="top" constant="16" id="PC0-pc-34W"/>
+                                                <constraint firstItem="ZfA-h1-qxy" firstAttribute="leading" secondItem="DU9-6x-Ee2" secondAttribute="leading" id="bZ1-Ne-ywE"/>
+                                                <constraint firstItem="1su-cw-Qab" firstAttribute="leading" secondItem="DU9-6x-Ee2" secondAttribute="leading" id="rw5-5t-65w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bidDetail" destination="ZfA-h1-qxy" id="afO-no-N09"/>
+                                            <outlet property="date" destination="1su-cw-Qab" id="GjV-68-EoI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kj1-D7-EDv" firstAttribute="width" secondItem="elf-fJ-J3X" secondAttribute="width" multiplier="300/375" id="FNj-7H-yTp"/>
+                            <constraint firstItem="MIL-Qp-acI" firstAttribute="bottom" secondItem="kj1-D7-EDv" secondAttribute="bottom" id="h6x-yd-xhw"/>
+                            <constraint firstItem="kj1-D7-EDv" firstAttribute="centerX" secondItem="elf-fJ-J3X" secondAttribute="centerX" id="kEm-NK-oNl"/>
+                            <constraint firstItem="kj1-D7-EDv" firstAttribute="top" secondItem="MIL-Qp-acI" secondAttribute="top" id="koB-OI-0HI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MIL-Qp-acI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="2UK-mX-ONJ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fNV-IQ-0GL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bidTableView" destination="kj1-D7-EDv" id="9Pk-sf-bQq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acc-9d-ZNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2880.8000000000002" y="88.605697151424295"/>
         </scene>
         <!--Discover-->
         <scene sceneID="B5O-TP-xBv">
